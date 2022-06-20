@@ -156,6 +156,7 @@
             this.chb_toggleDecl = new System.Windows.Forms.CheckBox();
             this.chb_showDefs = new System.Windows.Forms.CheckBox();
             this.chb_showComment = new System.Windows.Forms.CheckBox();
+            this.l_ver = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stoppingPower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_bulletSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_accTouch)).BeginInit();
@@ -1906,6 +1907,18 @@
             this.chb_showComment.UseVisualStyleBackColor = false;
             this.chb_showComment.CheckedChanged += new System.EventHandler(this.ToggleComment);
             // 
+            // l_ver
+            // 
+            this.l_ver.AutoSize = true;
+            this.l_ver.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.l_ver.ForeColor = System.Drawing.SystemColors.Control;
+            this.l_ver.Location = new System.Drawing.Point(12, 687);
+            this.l_ver.Name = "l_ver";
+            this.l_ver.Size = new System.Drawing.Size(40, 15);
+            this.l_ver.TabIndex = 28;
+            this.l_ver.Text = "v 1.1.0";
+            this.l_ver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -2011,6 +2024,7 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.cb_shotSound);
             this.Controls.Add(this.label16);
+            this.Controls.Add(this.l_ver);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.cb_class);
             this.Controls.Add(this.label14);
@@ -2219,5 +2233,6 @@
         private CheckBox chb_toggleDecl;
         private CheckBox chb_showDefs;
         private CheckBox chb_showComment;
+        private Label l_ver;
     }
 }
