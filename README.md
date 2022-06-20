@@ -18,4 +18,8 @@ Is a tool for creating weapons for RimWorld.
 - `<defaultProjectile>` doesn't update when renaming `<defName>`.
 
 ## To-do:
+- Reduce code size, make it DRY
+- Test, a lot
+- Make preview window bigger
 - Texture preview?
+- Melee?
