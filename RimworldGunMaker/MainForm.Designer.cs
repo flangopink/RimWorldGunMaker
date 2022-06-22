@@ -214,13 +214,14 @@
             // 
             // tb_defName
             // 
+            this.tb_defName.BackColor = System.Drawing.SystemColors.Window;
             this.tb_defName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tb_defName.Location = new System.Drawing.Point(96, 55);
             this.tb_defName.Name = "tb_defName";
             this.tb_defName.PlaceholderText = "SemiAutomaticRifle";
             this.tb_defName.Size = new System.Drawing.Size(350, 27);
             this.tb_defName.TabIndex = 2;
-            this.tb_defName.TextChanged += new System.EventHandler(this.Tb_defName_TextChanged);
+            this.tb_defName.TextChanged += new System.EventHandler(this.DefNameOrPrefix_Changed);
             // 
             // tb_label
             // 
@@ -250,7 +251,7 @@
             this.tb_prefix.PlaceholderText = "VWE";
             this.tb_prefix.Size = new System.Drawing.Size(127, 27);
             this.tb_prefix.TabIndex = 1;
-            this.tb_prefix.TextChanged += new System.EventHandler(this.Tb_prefix_TextChanged);
+            this.tb_prefix.TextChanged += new System.EventHandler(this.DefNameOrPrefix_Changed);
             // 
             // label3
             // 
@@ -296,7 +297,7 @@
             // nud_bulletSpeed
             // 
             this.nud_bulletSpeed.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_bulletSpeed.Location = new System.Drawing.Point(706, 55);
+            this.nud_bulletSpeed.Location = new System.Drawing.Point(706, 50);
             this.nud_bulletSpeed.Name = "nud_bulletSpeed";
             this.nud_bulletSpeed.Size = new System.Drawing.Size(50, 27);
             this.nud_bulletSpeed.TabIndex = 12;
@@ -311,7 +312,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(606, 58);
+            this.label6.Location = new System.Drawing.Point(606, 52);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 20);
             this.label6.TabIndex = 10;
@@ -372,7 +373,7 @@
             "WaterSplash"});
             this.cb_bulletTex.Location = new System.Drawing.Point(96, 275);
             this.cb_bulletTex.Name = "cb_bulletTex";
-            this.cb_bulletTex.Size = new System.Drawing.Size(187, 28);
+            this.cb_bulletTex.Size = new System.Drawing.Size(164, 28);
             this.cb_bulletTex.TabIndex = 6;
             this.cb_bulletTex.SelectedIndexChanged += new System.EventHandler(this.BulletTex_SelectedIndexChanged);
             // 
@@ -421,7 +422,7 @@
             "Interact_SMG",
             "Interact_ChargeRifle",
             "Interact_ChargeLance"});
-            this.cb_interactSound.Location = new System.Drawing.Point(739, 242);
+            this.cb_interactSound.Location = new System.Drawing.Point(735, 228);
             this.cb_interactSound.Name = "cb_interactSound";
             this.cb_interactSound.Size = new System.Drawing.Size(170, 28);
             this.cb_interactSound.TabIndex = 40;
@@ -431,7 +432,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(770, 217);
+            this.label11.Location = new System.Drawing.Point(763, 208);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 20);
             this.label11.TabIndex = 20;
@@ -454,17 +455,17 @@
             "NeolithicRangedBasic",
             "NeolithicRangedHeavy",
             "NeolithicRangedChief"});
-            this.cb_tag.Location = new System.Drawing.Point(52, 309);
+            this.cb_tag.Location = new System.Drawing.Point(96, 309);
             this.cb_tag.Name = "cb_tag";
-            this.cb_tag.Size = new System.Drawing.Size(170, 28);
+            this.cb_tag.Size = new System.Drawing.Size(164, 28);
             this.cb_tag.TabIndex = 7;
-            this.cb_tag.SelectedIndexChanged += new System.EventHandler(this.Tag_Changed);
+            this.cb_tag.SelectedIndexChanged += new System.EventHandler(this.TagOrClass_Changed);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(13, 312);
+            this.label12.Location = new System.Drawing.Point(57, 312);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(33, 20);
             this.label12.TabIndex = 22;
@@ -493,7 +494,7 @@
             "VWE_Longbow",
             "VWE_Crossbow",
             "VWE_CompoundBow"});
-            this.cb_reqResearch.Location = new System.Drawing.Point(121, 540);
+            this.cb_reqResearch.Location = new System.Drawing.Point(122, 490);
             this.cb_reqResearch.Name = "cb_reqResearch";
             this.cb_reqResearch.Size = new System.Drawing.Size(162, 28);
             this.cb_reqResearch.TabIndex = 45;
@@ -503,7 +504,7 @@
             // 
             this.l_cr2.AutoSize = true;
             this.l_cr2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_cr2.Location = new System.Drawing.Point(11, 543);
+            this.l_cr2.Location = new System.Drawing.Point(12, 493);
             this.l_cr2.Name = "l_cr2";
             this.l_cr2.Size = new System.Drawing.Size(104, 20);
             this.l_cr2.TabIndex = 24;
@@ -513,7 +514,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(228, 312);
+            this.label14.Location = new System.Drawing.Point(48, 344);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(42, 20);
             this.label14.TabIndex = 26;
@@ -529,18 +530,18 @@
             "RangedHeavy",
             "ShortShots",
             "LongShots"});
-            this.cb_class.Location = new System.Drawing.Point(276, 309);
+            this.cb_class.Location = new System.Drawing.Point(96, 341);
             this.cb_class.Name = "cb_class";
-            this.cb_class.Size = new System.Drawing.Size(170, 28);
+            this.cb_class.Size = new System.Drawing.Size(164, 28);
             this.cb_class.TabIndex = 8;
-            this.cb_class.SelectedIndexChanged += new System.EventHandler(this.Class_Changed);
+            this.cb_class.SelectedIndexChanged += new System.EventHandler(this.TagOrClass_Changed);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label15.ForeColor = System.Drawing.SystemColors.Control;
-            this.label15.Location = new System.Drawing.Point(121, 340);
+            this.label15.Location = new System.Drawing.Point(93, 372);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(170, 15);
             this.label15.TabIndex = 28;
@@ -573,7 +574,7 @@
             "Bow_Small",
             "Bow_Recurve",
             "Bow_Large"});
-            this.cb_shotSound.Location = new System.Drawing.Point(739, 308);
+            this.cb_shotSound.Location = new System.Drawing.Point(735, 278);
             this.cb_shotSound.Name = "cb_shotSound";
             this.cb_shotSound.Size = new System.Drawing.Size(170, 28);
             this.cb_shotSound.TabIndex = 41;
@@ -583,7 +584,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(777, 281);
+            this.label16.Location = new System.Drawing.Point(777, 258);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(88, 20);
             this.label16.TabIndex = 30;
@@ -675,7 +676,7 @@
             this.nud_accLong.Size = new System.Drawing.Size(50, 27);
             this.nud_accLong.TabIndex = 21;
             this.nud_accLong.Value = new decimal(new int[] {
-            68,
+            65,
             0,
             0,
             131072});
@@ -730,7 +731,7 @@
             0,
             0,
             65536});
-            this.nud_rangedWarmup.Location = new System.Drawing.Point(538, 154);
+            this.nud_rangedWarmup.Location = new System.Drawing.Point(538, 134);
             this.nud_rangedWarmup.Name = "nud_rangedWarmup";
             this.nud_rangedWarmup.Size = new System.Drawing.Size(50, 27);
             this.nud_rangedWarmup.TabIndex = 14;
@@ -746,7 +747,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(465, 156);
+            this.label22.Location = new System.Drawing.Point(465, 136);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(67, 20);
             this.label22.TabIndex = 50;
@@ -761,7 +762,7 @@
             0,
             0,
             65536});
-            this.nud_rangedCooldown.Location = new System.Drawing.Point(538, 121);
+            this.nud_rangedCooldown.Location = new System.Drawing.Point(538, 106);
             this.nud_rangedCooldown.Name = "nud_rangedCooldown";
             this.nud_rangedCooldown.Size = new System.Drawing.Size(50, 27);
             this.nud_rangedCooldown.TabIndex = 13;
@@ -776,7 +777,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(455, 123);
+            this.label23.Location = new System.Drawing.Point(454, 108);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(78, 20);
             this.label23.TabIndex = 48;
@@ -791,7 +792,7 @@
             0,
             0,
             65536});
-            this.nud_mass.Location = new System.Drawing.Point(706, 154);
+            this.nud_mass.Location = new System.Drawing.Point(706, 134);
             this.nud_mass.Name = "nud_mass";
             this.nud_mass.Size = new System.Drawing.Size(50, 27);
             this.nud_mass.TabIndex = 23;
@@ -806,7 +807,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(657, 156);
+            this.label24.Location = new System.Drawing.Point(657, 136);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(43, 20);
             this.label24.TabIndex = 46;
@@ -816,7 +817,7 @@
             // 
             this.nud_range.DecimalPlaces = 1;
             this.nud_range.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_range.Location = new System.Drawing.Point(538, 88);
+            this.nud_range.Location = new System.Drawing.Point(538, 78);
             this.nud_range.Name = "nud_range";
             this.nud_range.Size = new System.Drawing.Size(50, 27);
             this.nud_range.TabIndex = 11;
@@ -832,7 +833,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(480, 90);
+            this.label25.Location = new System.Drawing.Point(480, 80);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(52, 20);
             this.label25.TabIndex = 44;
@@ -842,7 +843,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(491, 216);
+            this.label26.Location = new System.Drawing.Point(483, 189);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(51, 20);
             this.label26.TabIndex = 52;
@@ -854,7 +855,7 @@
             this.chb_hasGrip.AutoSize = true;
             this.chb_hasGrip.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chb_hasGrip.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chb_hasGrip.Location = new System.Drawing.Point(486, 310);
+            this.chb_hasGrip.Location = new System.Drawing.Point(483, 274);
             this.chb_hasGrip.Name = "chb_hasGrip";
             this.chb_hasGrip.Size = new System.Drawing.Size(56, 24);
             this.chb_hasGrip.TabIndex = 31;
@@ -866,7 +867,7 @@
             // 
             this.nud_barrelDamage.Enabled = false;
             this.nud_barrelDamage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_barrelDamage.Location = new System.Drawing.Point(598, 243);
+            this.nud_barrelDamage.Location = new System.Drawing.Point(593, 217);
             this.nud_barrelDamage.Name = "nud_barrelDamage";
             this.nud_barrelDamage.Size = new System.Drawing.Size(42, 27);
             this.nud_barrelDamage.TabIndex = 26;
@@ -882,7 +883,7 @@
             this.l_m1.AutoSize = true;
             this.l_m1.Enabled = false;
             this.l_m1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m1.Location = new System.Drawing.Point(548, 245);
+            this.l_m1.Location = new System.Drawing.Point(543, 219);
             this.l_m1.Name = "l_m1";
             this.l_m1.Size = new System.Drawing.Size(44, 20);
             this.l_m1.TabIndex = 55;
@@ -899,7 +900,7 @@
             0,
             0,
             65536});
-            this.nud_barrelCooldown.Location = new System.Drawing.Point(681, 243);
+            this.nud_barrelCooldown.Location = new System.Drawing.Point(676, 217);
             this.nud_barrelCooldown.Name = "nud_barrelCooldown";
             this.nud_barrelCooldown.Size = new System.Drawing.Size(43, 27);
             this.nud_barrelCooldown.TabIndex = 27;
@@ -915,7 +916,7 @@
             this.l_m2.AutoSize = true;
             this.l_m2.Enabled = false;
             this.l_m2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m2.Location = new System.Drawing.Point(646, 245);
+            this.l_m2.Location = new System.Drawing.Point(641, 219);
             this.l_m2.Name = "l_m2";
             this.l_m2.Size = new System.Drawing.Size(29, 20);
             this.l_m2.TabIndex = 56;
@@ -931,7 +932,7 @@
             0,
             0,
             65536});
-            this.nud_stockCooldown.Location = new System.Drawing.Point(681, 276);
+            this.nud_stockCooldown.Location = new System.Drawing.Point(676, 245);
             this.nud_stockCooldown.Name = "nud_stockCooldown";
             this.nud_stockCooldown.Size = new System.Drawing.Size(43, 27);
             this.nud_stockCooldown.TabIndex = 30;
@@ -947,7 +948,7 @@
             this.l_m4.AutoSize = true;
             this.l_m4.Enabled = false;
             this.l_m4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m4.Location = new System.Drawing.Point(646, 278);
+            this.l_m4.Location = new System.Drawing.Point(641, 247);
             this.l_m4.Name = "l_m4";
             this.l_m4.Size = new System.Drawing.Size(29, 20);
             this.l_m4.TabIndex = 61;
@@ -958,7 +959,7 @@
             this.l_m3.AutoSize = true;
             this.l_m3.Enabled = false;
             this.l_m3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m3.Location = new System.Drawing.Point(548, 278);
+            this.l_m3.Location = new System.Drawing.Point(543, 247);
             this.l_m3.Name = "l_m3";
             this.l_m3.Size = new System.Drawing.Size(44, 20);
             this.l_m3.TabIndex = 60;
@@ -969,7 +970,7 @@
             // 
             this.nud_stockDamage.Enabled = false;
             this.nud_stockDamage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_stockDamage.Location = new System.Drawing.Point(598, 276);
+            this.nud_stockDamage.Location = new System.Drawing.Point(593, 245);
             this.nud_stockDamage.Name = "nud_stockDamage";
             this.nud_stockDamage.Size = new System.Drawing.Size(42, 27);
             this.nud_stockDamage.TabIndex = 29;
@@ -985,7 +986,7 @@
             this.chb_hasStock.AutoSize = true;
             this.chb_hasStock.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chb_hasStock.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chb_hasStock.Location = new System.Drawing.Point(478, 277);
+            this.chb_hasStock.Location = new System.Drawing.Point(475, 246);
             this.chb_hasStock.Name = "chb_hasStock";
             this.chb_hasStock.Size = new System.Drawing.Size(64, 24);
             this.chb_hasStock.TabIndex = 28;
@@ -1003,7 +1004,7 @@
             0,
             0,
             65536});
-            this.nud_gripCooldown.Location = new System.Drawing.Point(681, 309);
+            this.nud_gripCooldown.Location = new System.Drawing.Point(676, 273);
             this.nud_gripCooldown.Name = "nud_gripCooldown";
             this.nud_gripCooldown.Size = new System.Drawing.Size(43, 27);
             this.nud_gripCooldown.TabIndex = 33;
@@ -1019,7 +1020,7 @@
             this.l_m6.AutoSize = true;
             this.l_m6.Enabled = false;
             this.l_m6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m6.Location = new System.Drawing.Point(646, 311);
+            this.l_m6.Location = new System.Drawing.Point(641, 275);
             this.l_m6.Name = "l_m6";
             this.l_m6.Size = new System.Drawing.Size(29, 20);
             this.l_m6.TabIndex = 66;
@@ -1030,7 +1031,7 @@
             this.l_m5.AutoSize = true;
             this.l_m5.Enabled = false;
             this.l_m5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m5.Location = new System.Drawing.Point(548, 311);
+            this.l_m5.Location = new System.Drawing.Point(543, 275);
             this.l_m5.Name = "l_m5";
             this.l_m5.Size = new System.Drawing.Size(44, 20);
             this.l_m5.TabIndex = 65;
@@ -1041,7 +1042,7 @@
             // 
             this.nud_gripDamage.Enabled = false;
             this.nud_gripDamage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_gripDamage.Location = new System.Drawing.Point(598, 309);
+            this.nud_gripDamage.Location = new System.Drawing.Point(593, 273);
             this.nud_gripDamage.Name = "nud_gripDamage";
             this.nud_gripDamage.Size = new System.Drawing.Size(42, 27);
             this.nud_gripDamage.TabIndex = 32;
@@ -1057,7 +1058,7 @@
             this.chb_hasBarrel.AutoSize = true;
             this.chb_hasBarrel.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chb_hasBarrel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chb_hasBarrel.Location = new System.Drawing.Point(475, 244);
+            this.chb_hasBarrel.Location = new System.Drawing.Point(472, 218);
             this.chb_hasBarrel.Name = "chb_hasBarrel";
             this.chb_hasBarrel.Size = new System.Drawing.Size(67, 24);
             this.chb_hasBarrel.TabIndex = 25;
@@ -1075,7 +1076,7 @@
             0,
             0,
             65536});
-            this.nud_bladeCooldown.Location = new System.Drawing.Point(681, 342);
+            this.nud_bladeCooldown.Location = new System.Drawing.Point(676, 301);
             this.nud_bladeCooldown.Name = "nud_bladeCooldown";
             this.nud_bladeCooldown.Size = new System.Drawing.Size(43, 27);
             this.nud_bladeCooldown.TabIndex = 36;
@@ -1091,7 +1092,7 @@
             this.l_m8.AutoSize = true;
             this.l_m8.Enabled = false;
             this.l_m8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m8.Location = new System.Drawing.Point(646, 344);
+            this.l_m8.Location = new System.Drawing.Point(641, 303);
             this.l_m8.Name = "l_m8";
             this.l_m8.Size = new System.Drawing.Size(29, 20);
             this.l_m8.TabIndex = 71;
@@ -1102,7 +1103,7 @@
             this.l_m7.AutoSize = true;
             this.l_m7.Enabled = false;
             this.l_m7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m7.Location = new System.Drawing.Point(548, 344);
+            this.l_m7.Location = new System.Drawing.Point(543, 303);
             this.l_m7.Name = "l_m7";
             this.l_m7.Size = new System.Drawing.Size(44, 20);
             this.l_m7.TabIndex = 70;
@@ -1113,7 +1114,7 @@
             // 
             this.nud_bladeDamage.Enabled = false;
             this.nud_bladeDamage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_bladeDamage.Location = new System.Drawing.Point(598, 342);
+            this.nud_bladeDamage.Location = new System.Drawing.Point(593, 301);
             this.nud_bladeDamage.Name = "nud_bladeDamage";
             this.nud_bladeDamage.Size = new System.Drawing.Size(42, 27);
             this.nud_bladeDamage.TabIndex = 35;
@@ -1129,7 +1130,7 @@
             this.chb_hasBlade.AutoSize = true;
             this.chb_hasBlade.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chb_hasBlade.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chb_hasBlade.Location = new System.Drawing.Point(476, 343);
+            this.chb_hasBlade.Location = new System.Drawing.Point(473, 302);
             this.chb_hasBlade.Name = "chb_hasBlade";
             this.chb_hasBlade.Size = new System.Drawing.Size(66, 24);
             this.chb_hasBlade.TabIndex = 34;
@@ -1147,7 +1148,7 @@
             0,
             0,
             65536});
-            this.nud_limbCooldown.Location = new System.Drawing.Point(681, 375);
+            this.nud_limbCooldown.Location = new System.Drawing.Point(676, 329);
             this.nud_limbCooldown.Name = "nud_limbCooldown";
             this.nud_limbCooldown.Size = new System.Drawing.Size(43, 27);
             this.nud_limbCooldown.TabIndex = 39;
@@ -1163,7 +1164,7 @@
             this.l_m10.AutoSize = true;
             this.l_m10.Enabled = false;
             this.l_m10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m10.Location = new System.Drawing.Point(646, 377);
+            this.l_m10.Location = new System.Drawing.Point(641, 331);
             this.l_m10.Name = "l_m10";
             this.l_m10.Size = new System.Drawing.Size(29, 20);
             this.l_m10.TabIndex = 76;
@@ -1174,7 +1175,7 @@
             this.l_m9.AutoSize = true;
             this.l_m9.Enabled = false;
             this.l_m9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_m9.Location = new System.Drawing.Point(548, 377);
+            this.l_m9.Location = new System.Drawing.Point(543, 331);
             this.l_m9.Name = "l_m9";
             this.l_m9.Size = new System.Drawing.Size(44, 20);
             this.l_m9.TabIndex = 75;
@@ -1185,7 +1186,7 @@
             // 
             this.nud_limbDamage.Enabled = false;
             this.nud_limbDamage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_limbDamage.Location = new System.Drawing.Point(598, 375);
+            this.nud_limbDamage.Location = new System.Drawing.Point(593, 329);
             this.nud_limbDamage.Name = "nud_limbDamage";
             this.nud_limbDamage.Size = new System.Drawing.Size(42, 27);
             this.nud_limbDamage.TabIndex = 38;
@@ -1201,7 +1202,7 @@
             this.chb_hasLimb.AutoSize = true;
             this.chb_hasLimb.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chb_hasLimb.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chb_hasLimb.Location = new System.Drawing.Point(481, 376);
+            this.chb_hasLimb.Location = new System.Drawing.Point(478, 330);
             this.chb_hasLimb.Name = "chb_hasLimb";
             this.chb_hasLimb.Size = new System.Drawing.Size(61, 24);
             this.chb_hasLimb.TabIndex = 37;
@@ -1217,7 +1218,7 @@
             "GunTail_Light",
             "GunTail_Medium",
             "GunTail_Heavy"});
-            this.cb_shotTailSound.Location = new System.Drawing.Point(739, 374);
+            this.cb_shotTailSound.Location = new System.Drawing.Point(735, 328);
             this.cb_shotTailSound.Name = "cb_shotTailSound";
             this.cb_shotTailSound.Size = new System.Drawing.Size(170, 28);
             this.cb_shotTailSound.TabIndex = 42;
@@ -1227,7 +1228,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label37.Location = new System.Drawing.Point(767, 347);
+            this.label37.Location = new System.Drawing.Point(763, 308);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(115, 20);
             this.label37.TabIndex = 79;
@@ -1239,7 +1240,7 @@
             this.chb_isBurst.AutoSize = true;
             this.chb_isBurst.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chb_isBurst.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chb_isBurst.Location = new System.Drawing.Point(606, 96);
+            this.chb_isBurst.Location = new System.Drawing.Point(610, 83);
             this.chb_isBurst.Name = "chb_isBurst";
             this.chb_isBurst.Size = new System.Drawing.Size(53, 38);
             this.chb_isBurst.TabIndex = 15;
@@ -1251,7 +1252,7 @@
             // 
             this.nud_burstCount.Enabled = false;
             this.nud_burstCount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_burstCount.Location = new System.Drawing.Point(716, 88);
+            this.nud_burstCount.Location = new System.Drawing.Point(716, 78);
             this.nud_burstCount.Name = "nud_burstCount";
             this.nud_burstCount.Size = new System.Drawing.Size(40, 27);
             this.nud_burstCount.TabIndex = 16;
@@ -1268,7 +1269,7 @@
             this.l_b1.AutoSize = true;
             this.l_b1.Enabled = false;
             this.l_b1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_b1.Location = new System.Drawing.Point(662, 92);
+            this.l_b1.Location = new System.Drawing.Point(660, 80);
             this.l_b1.Name = "l_b1";
             this.l_b1.Size = new System.Drawing.Size(50, 20);
             this.l_b1.TabIndex = 82;
@@ -1278,7 +1279,7 @@
             // 
             this.nud_burstDelay.Enabled = false;
             this.nud_burstDelay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_burstDelay.Location = new System.Drawing.Point(716, 121);
+            this.nud_burstDelay.Location = new System.Drawing.Point(716, 106);
             this.nud_burstDelay.Name = "nud_burstDelay";
             this.nud_burstDelay.Size = new System.Drawing.Size(40, 27);
             this.nud_burstDelay.TabIndex = 17;
@@ -1295,7 +1296,7 @@
             this.l_b2.AutoSize = true;
             this.l_b2.Enabled = false;
             this.l_b2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_b2.Location = new System.Drawing.Point(662, 125);
+            this.l_b2.Location = new System.Drawing.Point(662, 108);
             this.l_b2.Name = "l_b2";
             this.l_b2.Size = new System.Drawing.Size(48, 20);
             this.l_b2.TabIndex = 84;
@@ -1305,7 +1306,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(466, 22);
+            this.label4.Location = new System.Drawing.Point(466, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 20);
             this.label4.TabIndex = 6;
@@ -1328,7 +1329,7 @@
             // nud_muzzleflashScale
             // 
             this.nud_muzzleflashScale.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_muzzleflashScale.Location = new System.Drawing.Point(706, 187);
+            this.nud_muzzleflashScale.Location = new System.Drawing.Point(706, 162);
             this.nud_muzzleflashScale.Name = "nud_muzzleflashScale";
             this.nud_muzzleflashScale.Size = new System.Drawing.Size(50, 27);
             this.nud_muzzleflashScale.TabIndex = 22;
@@ -1344,7 +1345,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label41.Location = new System.Drawing.Point(571, 189);
+            this.label41.Location = new System.Drawing.Point(571, 164);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(129, 20);
             this.label41.TabIndex = 86;
@@ -1353,7 +1354,7 @@
             // nud_marketValue
             // 
             this.nud_marketValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_marketValue.Location = new System.Drawing.Point(815, 155);
+            this.nud_marketValue.Location = new System.Drawing.Point(815, 162);
             this.nud_marketValue.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -1368,7 +1369,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label42.Location = new System.Drawing.Point(762, 157);
+            this.label42.Location = new System.Drawing.Point(762, 164);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(47, 20);
             this.label42.TabIndex = 88;
@@ -1379,7 +1380,7 @@
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label43.ForeColor = System.Drawing.SystemColors.Control;
-            this.label43.Location = new System.Drawing.Point(794, 185);
+            this.label43.Location = new System.Drawing.Point(794, 189);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(101, 15);
             this.label43.TabIndex = 90;
@@ -1396,7 +1397,7 @@
             "Medieval",
             "Spacer",
             "Ultra"});
-            this.cb_techLevel.Location = new System.Drawing.Point(121, 506);
+            this.cb_techLevel.Location = new System.Drawing.Point(122, 456);
             this.cb_techLevel.Name = "cb_techLevel";
             this.cb_techLevel.Size = new System.Drawing.Size(162, 28);
             this.cb_techLevel.TabIndex = 44;
@@ -1406,7 +1407,7 @@
             // 
             this.l_cr1.AutoSize = true;
             this.l_cr1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_cr1.Location = new System.Drawing.Point(36, 509);
+            this.l_cr1.Location = new System.Drawing.Point(37, 459);
             this.l_cr1.Name = "l_cr1";
             this.l_cr1.Size = new System.Drawing.Size(79, 20);
             this.l_cr1.TabIndex = 92;
@@ -1419,7 +1420,7 @@
             this.chb_isCraftable.Checked = true;
             this.chb_isCraftable.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chb_isCraftable.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chb_isCraftable.Location = new System.Drawing.Point(11, 475);
+            this.chb_isCraftable.Location = new System.Drawing.Point(55, 426);
             this.chb_isCraftable.Name = "chb_isCraftable";
             this.chb_isCraftable.Size = new System.Drawing.Size(96, 24);
             this.chb_isCraftable.TabIndex = 43;
@@ -1435,7 +1436,7 @@
             "TableMachining",
             "Smithy",
             "FabricationBench"});
-            this.cb_workbench.Location = new System.Drawing.Point(121, 574);
+            this.cb_workbench.Location = new System.Drawing.Point(122, 524);
             this.cb_workbench.Name = "cb_workbench";
             this.cb_workbench.Size = new System.Drawing.Size(162, 28);
             this.cb_workbench.TabIndex = 46;
@@ -1445,7 +1446,7 @@
             // 
             this.l_cr3.AutoSize = true;
             this.l_cr3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_cr3.Location = new System.Drawing.Point(27, 577);
+            this.l_cr3.Location = new System.Drawing.Point(28, 527);
             this.l_cr3.Name = "l_cr3";
             this.l_cr3.Size = new System.Drawing.Size(88, 20);
             this.l_cr3.TabIndex = 95;
@@ -1454,7 +1455,7 @@
             // nud_reqSkill
             // 
             this.nud_reqSkill.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_reqSkill.Location = new System.Drawing.Point(121, 608);
+            this.nud_reqSkill.Location = new System.Drawing.Point(122, 558);
             this.nud_reqSkill.Name = "nud_reqSkill";
             this.nud_reqSkill.Size = new System.Drawing.Size(50, 27);
             this.nud_reqSkill.TabIndex = 47;
@@ -1464,7 +1465,7 @@
             // 
             this.l_cr4.AutoSize = true;
             this.l_cr4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_cr4.Location = new System.Drawing.Point(44, 610);
+            this.l_cr4.Location = new System.Drawing.Point(45, 560);
             this.l_cr4.Name = "l_cr4";
             this.l_cr4.Size = new System.Drawing.Size(71, 20);
             this.l_cr4.TabIndex = 96;
@@ -1475,7 +1476,7 @@
             this.l_cr7.AutoSize = true;
             this.l_cr7.BackColor = System.Drawing.SystemColors.ControlDark;
             this.l_cr7.ForeColor = System.Drawing.SystemColors.Control;
-            this.l_cr7.Location = new System.Drawing.Point(177, 614);
+            this.l_cr7.Location = new System.Drawing.Point(178, 564);
             this.l_cr7.Name = "l_cr7";
             this.l_cr7.Size = new System.Drawing.Size(65, 15);
             this.l_cr7.TabIndex = 90;
@@ -1486,7 +1487,7 @@
             // 
             this.l_cr5.AutoSize = true;
             this.l_cr5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_cr5.Location = new System.Drawing.Point(340, 479);
+            this.l_cr5.Location = new System.Drawing.Point(332, 429);
             this.l_cr5.Name = "l_cr5";
             this.l_cr5.Size = new System.Drawing.Size(72, 20);
             this.l_cr5.TabIndex = 98;
@@ -1496,7 +1497,7 @@
             // nud_steel
             // 
             this.nud_steel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_steel.Location = new System.Drawing.Point(323, 506);
+            this.nud_steel.Location = new System.Drawing.Point(315, 456);
             this.nud_steel.Name = "nud_steel";
             this.nud_steel.Size = new System.Drawing.Size(42, 27);
             this.nud_steel.TabIndex = 49;
@@ -1510,7 +1511,7 @@
             // nud_comp
             // 
             this.nud_comp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_comp.Location = new System.Drawing.Point(404, 506);
+            this.nud_comp.Location = new System.Drawing.Point(396, 456);
             this.nud_comp.Name = "nud_comp";
             this.nud_comp.Size = new System.Drawing.Size(42, 27);
             this.nud_comp.TabIndex = 50;
@@ -1524,7 +1525,7 @@
             // nud_advcomp
             // 
             this.nud_advcomp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_advcomp.Location = new System.Drawing.Point(404, 540);
+            this.nud_advcomp.Location = new System.Drawing.Point(396, 490);
             this.nud_advcomp.Name = "nud_advcomp";
             this.nud_advcomp.Size = new System.Drawing.Size(42, 27);
             this.nud_advcomp.TabIndex = 52;
@@ -1533,7 +1534,7 @@
             // nud_plasteel
             // 
             this.nud_plasteel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_plasteel.Location = new System.Drawing.Point(323, 540);
+            this.nud_plasteel.Location = new System.Drawing.Point(315, 490);
             this.nud_plasteel.Name = "nud_plasteel";
             this.nud_plasteel.Size = new System.Drawing.Size(42, 27);
             this.nud_plasteel.TabIndex = 51;
@@ -1542,7 +1543,7 @@
             // p_1
             // 
             this.p_1.Image = ((System.Drawing.Image)(resources.GetObject("p_1.Image")));
-            this.p_1.Location = new System.Drawing.Point(301, 512);
+            this.p_1.Location = new System.Drawing.Point(293, 462);
             this.p_1.Name = "p_1";
             this.p_1.Size = new System.Drawing.Size(16, 16);
             this.p_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1552,7 +1553,7 @@
             // p_4
             // 
             this.p_4.Image = ((System.Drawing.Image)(resources.GetObject("p_4.Image")));
-            this.p_4.Location = new System.Drawing.Point(382, 512);
+            this.p_4.Location = new System.Drawing.Point(374, 462);
             this.p_4.Name = "p_4";
             this.p_4.Size = new System.Drawing.Size(16, 16);
             this.p_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1562,7 +1563,7 @@
             // p_5
             // 
             this.p_5.Image = ((System.Drawing.Image)(resources.GetObject("p_5.Image")));
-            this.p_5.Location = new System.Drawing.Point(382, 546);
+            this.p_5.Location = new System.Drawing.Point(374, 496);
             this.p_5.Name = "p_5";
             this.p_5.Size = new System.Drawing.Size(16, 16);
             this.p_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1572,7 +1573,7 @@
             // p_2
             // 
             this.p_2.Image = ((System.Drawing.Image)(resources.GetObject("p_2.Image")));
-            this.p_2.Location = new System.Drawing.Point(301, 546);
+            this.p_2.Location = new System.Drawing.Point(293, 496);
             this.p_2.Name = "p_2";
             this.p_2.Size = new System.Drawing.Size(16, 16);
             this.p_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1582,7 +1583,7 @@
             // p_3
             // 
             this.p_3.Image = ((System.Drawing.Image)(resources.GetObject("p_3.Image")));
-            this.p_3.Location = new System.Drawing.Point(301, 581);
+            this.p_3.Location = new System.Drawing.Point(293, 531);
             this.p_3.Name = "p_3";
             this.p_3.Size = new System.Drawing.Size(16, 16);
             this.p_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1592,7 +1593,7 @@
             // p_6
             // 
             this.p_6.Image = ((System.Drawing.Image)(resources.GetObject("p_6.Image")));
-            this.p_6.Location = new System.Drawing.Point(382, 581);
+            this.p_6.Location = new System.Drawing.Point(374, 531);
             this.p_6.Name = "p_6";
             this.p_6.Size = new System.Drawing.Size(16, 16);
             this.p_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1602,7 +1603,7 @@
             // nud_chemfuel
             // 
             this.nud_chemfuel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_chemfuel.Location = new System.Drawing.Point(404, 575);
+            this.nud_chemfuel.Location = new System.Drawing.Point(396, 525);
             this.nud_chemfuel.Name = "nud_chemfuel";
             this.nud_chemfuel.Size = new System.Drawing.Size(42, 27);
             this.nud_chemfuel.TabIndex = 54;
@@ -1611,7 +1612,7 @@
             // nud_wood
             // 
             this.nud_wood.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_wood.Location = new System.Drawing.Point(323, 575);
+            this.nud_wood.Location = new System.Drawing.Point(315, 525);
             this.nud_wood.Name = "nud_wood";
             this.nud_wood.Size = new System.Drawing.Size(42, 27);
             this.nud_wood.TabIndex = 53;
@@ -1625,7 +1626,7 @@
             0,
             0,
             0});
-            this.nud_workToMake.Location = new System.Drawing.Point(362, 608);
+            this.nud_workToMake.Location = new System.Drawing.Point(122, 591);
             this.nud_workToMake.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -1645,7 +1646,7 @@
             // 
             this.l_cr6.AutoSize = true;
             this.l_cr6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_cr6.Location = new System.Drawing.Point(248, 610);
+            this.l_cr6.Location = new System.Drawing.Point(8, 593);
             this.l_cr6.Name = "l_cr6";
             this.l_cr6.Size = new System.Drawing.Size(108, 20);
             this.l_cr6.TabIndex = 114;
@@ -1656,10 +1657,10 @@
             this.rtb_output.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.rtb_output.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtb_output.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.rtb_output.Location = new System.Drawing.Point(463, 411);
+            this.rtb_output.Location = new System.Drawing.Point(451, 372);
             this.rtb_output.Name = "rtb_output";
             this.rtb_output.ReadOnly = true;
-            this.rtb_output.Size = new System.Drawing.Size(446, 288);
+            this.rtb_output.Size = new System.Drawing.Size(458, 327);
             this.rtb_output.TabIndex = 115;
             this.rtb_output.Text = "";
             this.rtb_output.WordWrap = false;
@@ -1685,7 +1686,7 @@
             0,
             0,
             131072});
-            this.nud_armorPen.Location = new System.Drawing.Point(538, 55);
+            this.nud_armorPen.Location = new System.Drawing.Point(538, 50);
             this.nud_armorPen.Name = "nud_armorPen";
             this.nud_armorPen.Size = new System.Drawing.Size(50, 27);
             this.nud_armorPen.TabIndex = 117;
@@ -1695,7 +1696,7 @@
             // 
             this.nud_AP.AutoSize = true;
             this.nud_AP.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nud_AP.Location = new System.Drawing.Point(464, 58);
+            this.nud_AP.Location = new System.Drawing.Point(464, 52);
             this.nud_AP.Name = "nud_AP";
             this.nud_AP.Size = new System.Drawing.Size(68, 20);
             this.nud_AP.TabIndex = 118;
@@ -1704,8 +1705,8 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(465, 75);
+            this.label13.ForeColor = System.Drawing.SystemColors.Control;
+            this.label13.Location = new System.Drawing.Point(465, 68);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(65, 15);
             this.label13.TabIndex = 119;
@@ -1729,7 +1730,7 @@
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label28.ForeColor = System.Drawing.SystemColors.Control;
-            this.label28.Location = new System.Drawing.Point(699, 216);
+            this.label28.Location = new System.Drawing.Point(699, 189);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(57, 15);
             this.label28.TabIndex = 120;
@@ -1743,12 +1744,21 @@
             this.cb_damageDef.Items.AddRange(new object[] {
             "Bullet",
             "Arrow",
+            "ArrowHighVelocity",
             "RangedStab",
+            "ScratchToxic",
             "Blunt",
-            "Bomb"});
-            this.cb_damageDef.Location = new System.Drawing.Point(121, 369);
+            "Stun",
+            "Burn",
+            "Flame",
+            "Frostbite",
+            "Demolish",
+            "Thump",
+            "Bomb",
+            "EMP"});
+            this.cb_damageDef.Location = new System.Drawing.Point(356, 275);
             this.cb_damageDef.Name = "cb_damageDef";
-            this.cb_damageDef.Size = new System.Drawing.Size(162, 28);
+            this.cb_damageDef.Size = new System.Drawing.Size(90, 28);
             this.cb_damageDef.TabIndex = 121;
             this.cb_damageDef.SelectedIndexChanged += new System.EventHandler(this.ProjectileItem_Changed);
             // 
@@ -1756,7 +1766,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(25, 372);
+            this.label29.Location = new System.Drawing.Point(266, 278);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(90, 20);
             this.label29.TabIndex = 122;
@@ -1767,9 +1777,9 @@
             this.nud_explDelay.DecimalPlaces = 1;
             this.nud_explDelay.Enabled = false;
             this.nud_explDelay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_explDelay.Location = new System.Drawing.Point(231, 436);
+            this.nud_explDelay.Location = new System.Drawing.Point(356, 365);
             this.nud_explDelay.Name = "nud_explDelay";
-            this.nud_explDelay.Size = new System.Drawing.Size(52, 27);
+            this.nud_explDelay.Size = new System.Drawing.Size(50, 27);
             this.nud_explDelay.TabIndex = 126;
             this.nud_explDelay.ValueChanged += new System.EventHandler(this.ProjectileItem_Changed);
             // 
@@ -1778,7 +1788,7 @@
             this.l_bomb3.AutoSize = true;
             this.l_bomb3.Enabled = false;
             this.l_bomb3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_bomb3.Location = new System.Drawing.Point(177, 438);
+            this.l_bomb3.Location = new System.Drawing.Point(308, 367);
             this.l_bomb3.Name = "l_bomb3";
             this.l_bomb3.Size = new System.Drawing.Size(48, 20);
             this.l_bomb3.TabIndex = 130;
@@ -1789,7 +1799,7 @@
             this.l_bomb2.AutoSize = true;
             this.l_bomb2.Enabled = false;
             this.l_bomb2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_bomb2.Location = new System.Drawing.Point(33, 438);
+            this.l_bomb2.Location = new System.Drawing.Point(275, 337);
             this.l_bomb2.Name = "l_bomb2";
             this.l_bomb2.Size = new System.Drawing.Size(82, 20);
             this.l_bomb2.TabIndex = 129;
@@ -1806,7 +1816,7 @@
             0,
             0,
             131072});
-            this.nud_arcHeight.Location = new System.Drawing.Point(121, 436);
+            this.nud_arcHeight.Location = new System.Drawing.Point(356, 335);
             this.nud_arcHeight.Name = "nud_arcHeight";
             this.nud_arcHeight.Size = new System.Drawing.Size(50, 27);
             this.nud_arcHeight.TabIndex = 125;
@@ -1817,7 +1827,7 @@
             this.l_bomb1.AutoSize = true;
             this.l_bomb1.Enabled = false;
             this.l_bomb1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_bomb1.Location = new System.Drawing.Point(27, 405);
+            this.l_bomb1.Location = new System.Drawing.Point(266, 307);
             this.l_bomb1.Name = "l_bomb1";
             this.l_bomb1.Size = new System.Drawing.Size(91, 20);
             this.l_bomb1.TabIndex = 127;
@@ -1829,9 +1839,9 @@
             this.nud_explRadius.DecimalPlaces = 1;
             this.nud_explRadius.Enabled = false;
             this.nud_explRadius.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_explRadius.Location = new System.Drawing.Point(121, 403);
+            this.nud_explRadius.Location = new System.Drawing.Point(356, 305);
             this.nud_explRadius.Name = "nud_explRadius";
-            this.nud_explRadius.Size = new System.Drawing.Size(42, 27);
+            this.nud_explRadius.Size = new System.Drawing.Size(50, 27);
             this.nud_explRadius.TabIndex = 123;
             this.nud_explRadius.Value = new decimal(new int[] {
             19,
@@ -1845,7 +1855,7 @@
             this.chb_isIncendiary.AutoSize = true;
             this.chb_isIncendiary.Enabled = false;
             this.chb_isIncendiary.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chb_isIncendiary.Location = new System.Drawing.Point(177, 404);
+            this.chb_isIncendiary.Location = new System.Drawing.Point(337, 395);
             this.chb_isIncendiary.Name = "chb_isIncendiary";
             this.chb_isIncendiary.Size = new System.Drawing.Size(108, 24);
             this.chb_isIncendiary.TabIndex = 25;
@@ -1862,7 +1872,7 @@
             this.chb_toggleDecl.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chb_toggleDecl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chb_toggleDecl.ForeColor = System.Drawing.SystemColors.Control;
-            this.chb_toggleDecl.Location = new System.Drawing.Point(800, 412);
+            this.chb_toggleDecl.Location = new System.Drawing.Point(781, 377);
             this.chb_toggleDecl.Name = "chb_toggleDecl";
             this.chb_toggleDecl.Size = new System.Drawing.Size(105, 24);
             this.chb_toggleDecl.TabIndex = 37;
@@ -1880,7 +1890,7 @@
             this.chb_showDefs.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chb_showDefs.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chb_showDefs.ForeColor = System.Drawing.SystemColors.Control;
-            this.chb_showDefs.Location = new System.Drawing.Point(827, 436);
+            this.chb_showDefs.Location = new System.Drawing.Point(808, 401);
             this.chb_showDefs.Name = "chb_showDefs";
             this.chb_showDefs.Size = new System.Drawing.Size(78, 24);
             this.chb_showDefs.TabIndex = 37;
@@ -1898,7 +1908,7 @@
             this.chb_showComment.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chb_showComment.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chb_showComment.ForeColor = System.Drawing.SystemColors.Control;
-            this.chb_showComment.Location = new System.Drawing.Point(812, 460);
+            this.chb_showComment.Location = new System.Drawing.Point(793, 425);
             this.chb_showComment.Name = "chb_showComment";
             this.chb_showComment.Size = new System.Drawing.Size(93, 24);
             this.chb_showComment.TabIndex = 37;
@@ -1916,7 +1926,7 @@
             this.l_ver.Name = "l_ver";
             this.l_ver.Size = new System.Drawing.Size(40, 15);
             this.l_ver.TabIndex = 28;
-            this.l_ver.Text = "v 1.1.0";
+            this.l_ver.Text = "v 1.1.1";
             this.l_ver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
