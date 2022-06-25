@@ -48,11 +48,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cb_interactSound = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.cb_tag = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.cb_class = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.cb_shotSound = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.nud_accTouch = new System.Windows.Forms.NumericUpDown();
@@ -137,6 +134,14 @@
             this.tb_customInteractSound = new System.Windows.Forms.TextBox();
             this.tb_customShotSound = new System.Windows.Forms.TextBox();
             this.MainTabControl = new System.Windows.Forms.TabControl();
+            this.tab1_Info = new System.Windows.Forms.TabPage();
+            this.b_AddClass = new System.Windows.Forms.Button();
+            this.b_AddTag = new System.Windows.Forms.Button();
+            this.tb_customClass = new System.Windows.Forms.TextBox();
+            this.tb_customTag = new System.Windows.Forms.TextBox();
+            this.chlb_classes = new System.Windows.Forms.CheckedListBox();
+            this.chlb_tags = new System.Windows.Forms.CheckedListBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tab2_TexSounds = new System.Windows.Forms.TabPage();
             this.tb_ovW = new System.Windows.Forms.MaskedTextBox();
             this.tb_ovS = new System.Windows.Forms.MaskedTextBox();
@@ -157,6 +162,15 @@
             this.chb_customBulletTex = new System.Windows.Forms.CheckBox();
             this.label34 = new System.Windows.Forms.Label();
             this.l_ov6 = new System.Windows.Forms.Label();
+            this.tab3_Stats = new System.Windows.Forms.TabPage();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.nud_huntingStealth = new System.Windows.Forms.NumericUpDown();
+            this.nud_moveSpeed = new System.Windows.Forms.NumericUpDown();
+            this.tab4_Melee = new System.Windows.Forms.TabPage();
             this.tab5_Crafting = new System.Windows.Forms.TabPage();
             this.nud_workToMake = new System.Windows.Forms.NumericUpDown();
             this.l_cr6 = new System.Windows.Forms.Label();
@@ -182,9 +196,6 @@
             this.l_cr1 = new System.Windows.Forms.Label();
             this.cb_reqResearch = new System.Windows.Forms.ComboBox();
             this.l_cr2 = new System.Windows.Forms.Label();
-            this.tab1_Info = new System.Windows.Forms.TabPage();
-            this.tab3_Stats = new System.Windows.Forms.TabPage();
-            this.tab4_Melee = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stoppingPower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_bulletSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_accTouch)).BeginInit();
@@ -215,10 +226,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_arcHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_explRadius)).BeginInit();
             this.MainTabControl.SuspendLayout();
+            this.tab1_Info.SuspendLayout();
             this.tab2_TexSounds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_drawSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_uiIconScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_angleOffset)).BeginInit();
+            this.tab3_Stats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_huntingStealth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_moveSpeed)).BeginInit();
+            this.tab4_Melee.SuspendLayout();
             this.tab5_Crafting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_workToMake)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_chemfuel)).BeginInit();
@@ -234,9 +250,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_comp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_steel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_reqSkill)).BeginInit();
-            this.tab1_Info.SuspendLayout();
-            this.tab3_Stats.SuspendLayout();
-            this.tab4_Melee.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -309,22 +322,17 @@
             0,
             0,
             65536});
-            this.nud_stoppingPower.Location = new System.Drawing.Point(126, 151);
+            this.nud_stoppingPower.Location = new System.Drawing.Point(127, 72);
             this.nud_stoppingPower.Name = "nud_stoppingPower";
             this.nud_stoppingPower.Size = new System.Drawing.Size(50, 27);
             this.nud_stoppingPower.TabIndex = 10;
-            this.nud_stoppingPower.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            65536});
             this.nud_stoppingPower.ValueChanged += new System.EventHandler(this.ProjectileItem_Changed);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(30, 153);
+            this.label5.Location = new System.Drawing.Point(31, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 20);
             this.label5.TabIndex = 8;
@@ -334,22 +342,17 @@
             // nud_bulletSpeed
             // 
             this.nud_bulletSpeed.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_bulletSpeed.Location = new System.Drawing.Point(126, 179);
+            this.nud_bulletSpeed.Location = new System.Drawing.Point(127, 100);
             this.nud_bulletSpeed.Name = "nud_bulletSpeed";
             this.nud_bulletSpeed.Size = new System.Drawing.Size(50, 27);
             this.nud_bulletSpeed.TabIndex = 12;
-            this.nud_bulletSpeed.Value = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
             this.nud_bulletSpeed.ValueChanged += new System.EventHandler(this.ProjectileItem_Changed);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(26, 181);
+            this.label6.Location = new System.Drawing.Point(27, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 20);
             this.label6.TabIndex = 10;
@@ -476,75 +479,25 @@
             this.label11.Text = "Interact Sound";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cb_tag
-            // 
-            this.cb_tag.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_tag.FormattingEnabled = true;
-            this.cb_tag.Items.AddRange(new object[] {
-            "None",
-            "Gun",
-            "Revolver",
-            "SimpleGun",
-            "GunHeavy",
-            "IndustrialGunAdvanced",
-            "SniperRifle",
-            "SpacerGun",
-            "NeolithicRangedBasic",
-            "NeolithicRangedHeavy",
-            "NeolithicRangedChief"});
-            this.cb_tag.Location = new System.Drawing.Point(108, 246);
-            this.cb_tag.Name = "cb_tag";
-            this.cb_tag.Size = new System.Drawing.Size(164, 28);
-            this.cb_tag.TabIndex = 7;
-            this.cb_tag.SelectedIndexChanged += new System.EventHandler(this.TagOrClass_Changed);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(69, 249);
+            this.label12.Location = new System.Drawing.Point(108, 234);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(33, 20);
+            this.label12.Size = new System.Drawing.Size(39, 20);
             this.label12.TabIndex = 22;
-            this.label12.Text = "Tag";
+            this.label12.Text = "Tags";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(60, 281);
+            this.label14.Location = new System.Drawing.Point(282, 234);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 20);
+            this.label14.Size = new System.Drawing.Size(56, 20);
             this.label14.TabIndex = 26;
-            this.label14.Text = "Class";
-            // 
-            // cb_class
-            // 
-            this.cb_class.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_class.FormattingEnabled = true;
-            this.cb_class.Items.AddRange(new object[] {
-            "None",
-            "RangedLight",
-            "RangedHeavy",
-            "ShortShots",
-            "LongShots"});
-            this.cb_class.Location = new System.Drawing.Point(108, 278);
-            this.cb_class.Name = "cb_class";
-            this.cb_class.Size = new System.Drawing.Size(164, 28);
-            this.cb_class.TabIndex = 8;
-            this.cb_class.SelectedIndexChanged += new System.EventHandler(this.TagOrClass_Changed);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Gray;
-            this.label15.ForeColor = System.Drawing.SystemColors.Control;
-            this.label15.Location = new System.Drawing.Point(105, 309);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(170, 15);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "Todo: Multiple tags and classes";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label14.Text = "Classes";
             // 
             // cb_shotSound
             // 
@@ -598,22 +551,17 @@
             0,
             0,
             131072});
-            this.nud_accTouch.Location = new System.Drawing.Point(359, 35);
+            this.nud_accTouch.Location = new System.Drawing.Point(373, 44);
             this.nud_accTouch.Name = "nud_accTouch";
             this.nud_accTouch.Size = new System.Drawing.Size(50, 27);
             this.nud_accTouch.TabIndex = 18;
-            this.nud_accTouch.Value = new decimal(new int[] {
-            65,
-            0,
-            0,
-            131072});
             this.nud_accTouch.ValueChanged += new System.EventHandler(this.StatBasesItem_Changed);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(310, 37);
+            this.label19.Location = new System.Drawing.Point(324, 46);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(50, 20);
             this.label19.TabIndex = 31;
@@ -623,7 +571,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(325, 6);
+            this.label20.Location = new System.Drawing.Point(339, 15);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(71, 20);
             this.label20.TabIndex = 37;
@@ -639,22 +587,17 @@
             0,
             0,
             131072});
-            this.nud_accShort.Location = new System.Drawing.Point(359, 63);
+            this.nud_accShort.Location = new System.Drawing.Point(373, 72);
             this.nud_accShort.Name = "nud_accShort";
             this.nud_accShort.Size = new System.Drawing.Size(50, 27);
             this.nud_accShort.TabIndex = 19;
-            this.nud_accShort.Value = new decimal(new int[] {
-            7,
-            0,
-            0,
-            65536});
             this.nud_accShort.ValueChanged += new System.EventHandler(this.StatBasesItem_Changed);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(314, 65);
+            this.label17.Location = new System.Drawing.Point(328, 74);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(46, 20);
             this.label17.TabIndex = 38;
@@ -669,22 +612,17 @@
             0,
             0,
             131072});
-            this.nud_accLong.Location = new System.Drawing.Point(359, 119);
+            this.nud_accLong.Location = new System.Drawing.Point(373, 128);
             this.nud_accLong.Name = "nud_accLong";
             this.nud_accLong.Size = new System.Drawing.Size(50, 27);
             this.nud_accLong.TabIndex = 21;
-            this.nud_accLong.Value = new decimal(new int[] {
-            65,
-            0,
-            0,
-            131072});
             this.nud_accLong.ValueChanged += new System.EventHandler(this.StatBasesItem_Changed);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(317, 121);
+            this.label18.Location = new System.Drawing.Point(331, 130);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(43, 20);
             this.label18.TabIndex = 42;
@@ -699,22 +637,17 @@
             0,
             0,
             131072});
-            this.nud_accMedium.Location = new System.Drawing.Point(359, 91);
+            this.nud_accMedium.Location = new System.Drawing.Point(373, 100);
             this.nud_accMedium.Name = "nud_accMedium";
             this.nud_accMedium.Size = new System.Drawing.Size(50, 27);
             this.nud_accMedium.TabIndex = 20;
-            this.nud_accMedium.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            65536});
             this.nud_accMedium.ValueChanged += new System.EventHandler(this.StatBasesItem_Changed);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(320, 93);
+            this.label21.Location = new System.Drawing.Point(334, 102);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(40, 20);
             this.label21.TabIndex = 40;
@@ -729,15 +662,10 @@
             0,
             0,
             65536});
-            this.nud_rangedWarmup.Location = new System.Drawing.Point(126, 124);
+            this.nud_rangedWarmup.Location = new System.Drawing.Point(127, 189);
             this.nud_rangedWarmup.Name = "nud_rangedWarmup";
             this.nud_rangedWarmup.Size = new System.Drawing.Size(50, 27);
             this.nud_rangedWarmup.TabIndex = 14;
-            this.nud_rangedWarmup.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nud_rangedWarmup.ValueChanged += new System.EventHandler(this.VerbsItem_Changed);
             this.nud_rangedWarmup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.VerbsItem_KeyPress);
             // 
@@ -745,7 +673,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(53, 126);
+            this.label22.Location = new System.Drawing.Point(54, 191);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(67, 20);
             this.label22.TabIndex = 50;
@@ -760,22 +688,17 @@
             0,
             0,
             65536});
-            this.nud_rangedCooldown.Location = new System.Drawing.Point(126, 96);
+            this.nud_rangedCooldown.Location = new System.Drawing.Point(127, 161);
             this.nud_rangedCooldown.Name = "nud_rangedCooldown";
             this.nud_rangedCooldown.Size = new System.Drawing.Size(50, 27);
             this.nud_rangedCooldown.TabIndex = 13;
-            this.nud_rangedCooldown.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            65536});
             this.nud_rangedCooldown.ValueChanged += new System.EventHandler(this.StatBasesItem_Changed);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(42, 98);
+            this.label23.Location = new System.Drawing.Point(43, 163);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(78, 20);
             this.label23.TabIndex = 48;
@@ -790,22 +713,17 @@
             0,
             0,
             65536});
-            this.nud_mass.Location = new System.Drawing.Point(359, 152);
+            this.nud_mass.Location = new System.Drawing.Point(394, 161);
             this.nud_mass.Name = "nud_mass";
             this.nud_mass.Size = new System.Drawing.Size(50, 27);
             this.nud_mass.TabIndex = 23;
-            this.nud_mass.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
             this.nud_mass.ValueChanged += new System.EventHandler(this.StatBasesItem_Changed);
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(310, 154);
+            this.label24.Location = new System.Drawing.Point(345, 163);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(43, 20);
             this.label24.TabIndex = 46;
@@ -815,12 +733,12 @@
             // 
             this.nud_range.DecimalPlaces = 1;
             this.nud_range.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_range.Location = new System.Drawing.Point(126, 68);
+            this.nud_range.Location = new System.Drawing.Point(127, 128);
             this.nud_range.Name = "nud_range";
             this.nud_range.Size = new System.Drawing.Size(50, 27);
             this.nud_range.TabIndex = 11;
             this.nud_range.Value = new decimal(new int[] {
-            259,
+            9,
             0,
             0,
             65536});
@@ -831,7 +749,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(68, 70);
+            this.label25.Location = new System.Drawing.Point(69, 130);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(52, 20);
             this.label25.TabIndex = 44;
@@ -1238,7 +1156,7 @@
             this.chb_isBurst.AutoSize = true;
             this.chb_isBurst.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chb_isBurst.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chb_isBurst.Location = new System.Drawing.Point(30, 217);
+            this.chb_isBurst.Location = new System.Drawing.Point(183, 166);
             this.chb_isBurst.Name = "chb_isBurst";
             this.chb_isBurst.Size = new System.Drawing.Size(53, 38);
             this.chb_isBurst.TabIndex = 15;
@@ -1250,15 +1168,10 @@
             // 
             this.nud_burstCount.Enabled = false;
             this.nud_burstCount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_burstCount.Location = new System.Drawing.Point(136, 212);
+            this.nud_burstCount.Location = new System.Drawing.Point(289, 161);
             this.nud_burstCount.Name = "nud_burstCount";
             this.nud_burstCount.Size = new System.Drawing.Size(40, 27);
             this.nud_burstCount.TabIndex = 16;
-            this.nud_burstCount.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
             this.nud_burstCount.ValueChanged += new System.EventHandler(this.VerbsItem_Changed);
             this.nud_burstCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.VerbsItem_KeyPress);
             // 
@@ -1267,7 +1180,7 @@
             this.l_b1.AutoSize = true;
             this.l_b1.Enabled = false;
             this.l_b1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_b1.Location = new System.Drawing.Point(80, 214);
+            this.l_b1.Location = new System.Drawing.Point(233, 163);
             this.l_b1.Name = "l_b1";
             this.l_b1.Size = new System.Drawing.Size(50, 20);
             this.l_b1.TabIndex = 82;
@@ -1277,15 +1190,10 @@
             // 
             this.nud_burstDelay.Enabled = false;
             this.nud_burstDelay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_burstDelay.Location = new System.Drawing.Point(136, 240);
+            this.nud_burstDelay.Location = new System.Drawing.Point(289, 189);
             this.nud_burstDelay.Name = "nud_burstDelay";
             this.nud_burstDelay.Size = new System.Drawing.Size(40, 27);
             this.nud_burstDelay.TabIndex = 17;
-            this.nud_burstDelay.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.nud_burstDelay.ValueChanged += new System.EventHandler(this.VerbsItem_Changed);
             this.nud_burstDelay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.VerbsItem_KeyPress);
             // 
@@ -1294,7 +1202,7 @@
             this.l_b2.AutoSize = true;
             this.l_b2.Enabled = false;
             this.l_b2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_b2.Location = new System.Drawing.Point(82, 242);
+            this.l_b2.Location = new System.Drawing.Point(235, 191);
             this.l_b2.Name = "l_b2";
             this.l_b2.Size = new System.Drawing.Size(48, 20);
             this.l_b2.TabIndex = 84;
@@ -1304,7 +1212,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(54, 15);
+            this.label4.Location = new System.Drawing.Point(55, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 20);
             this.label4.TabIndex = 6;
@@ -1313,15 +1221,10 @@
             // nud_rangedDamage
             // 
             this.nud_rangedDamage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_rangedDamage.Location = new System.Drawing.Point(126, 12);
+            this.nud_rangedDamage.Location = new System.Drawing.Point(127, 16);
             this.nud_rangedDamage.Name = "nud_rangedDamage";
             this.nud_rangedDamage.Size = new System.Drawing.Size(50, 27);
             this.nud_rangedDamage.TabIndex = 9;
-            this.nud_rangedDamage.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
             this.nud_rangedDamage.ValueChanged += new System.EventHandler(this.ProjectileItem_Changed);
             // 
             // nud_muzzleflashScale
@@ -1352,7 +1255,7 @@
             // nud_marketValue
             // 
             this.nud_marketValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_marketValue.Location = new System.Drawing.Point(338, 180);
+            this.nud_marketValue.Location = new System.Drawing.Point(394, 189);
             this.nud_marketValue.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -1367,7 +1270,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label42.Location = new System.Drawing.Point(285, 182);
+            this.label42.Location = new System.Drawing.Point(341, 191);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(47, 20);
             this.label42.TabIndex = 88;
@@ -1378,7 +1281,7 @@
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.Color.Gray;
             this.label43.ForeColor = System.Drawing.SystemColors.Control;
-            this.label43.Location = new System.Drawing.Point(317, 207);
+            this.label43.Location = new System.Drawing.Point(373, 216);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(101, 15);
             this.label43.TabIndex = 90;
@@ -1419,7 +1322,7 @@
             0,
             0,
             131072});
-            this.nud_armorPen.Location = new System.Drawing.Point(126, 40);
+            this.nud_armorPen.Location = new System.Drawing.Point(127, 44);
             this.nud_armorPen.Name = "nud_armorPen";
             this.nud_armorPen.Size = new System.Drawing.Size(50, 27);
             this.nud_armorPen.TabIndex = 117;
@@ -1429,7 +1332,7 @@
             // 
             this.nud_AP.AutoSize = true;
             this.nud_AP.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nud_AP.Location = new System.Drawing.Point(52, 42);
+            this.nud_AP.Location = new System.Drawing.Point(53, 46);
             this.nud_AP.Name = "nud_AP";
             this.nud_AP.Size = new System.Drawing.Size(68, 20);
             this.nud_AP.TabIndex = 118;
@@ -1439,11 +1342,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(182, 46);
+            this.label13.Location = new System.Drawing.Point(183, 50);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 15);
+            this.label13.Size = new System.Drawing.Size(84, 15);
             this.label13.TabIndex = 119;
-            this.label13.Text = "0 = Default";
+            this.label13.Text = "Usually not set";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label27
@@ -1451,7 +1354,7 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.Gray;
             this.label27.ForeColor = System.Drawing.SystemColors.Control;
-            this.label27.Location = new System.Drawing.Point(181, 157);
+            this.label27.Location = new System.Drawing.Point(183, 78);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(65, 15);
             this.label27.TabIndex = 119;
@@ -1489,7 +1392,7 @@
             "Thump",
             "Bomb",
             "EMP"});
-            this.cb_damageDef.Location = new System.Drawing.Point(126, 283);
+            this.cb_damageDef.Location = new System.Drawing.Point(127, 231);
             this.cb_damageDef.Name = "cb_damageDef";
             this.cb_damageDef.Size = new System.Drawing.Size(90, 28);
             this.cb_damageDef.TabIndex = 121;
@@ -1499,7 +1402,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(36, 286);
+            this.label29.Location = new System.Drawing.Point(37, 234);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(90, 20);
             this.label29.TabIndex = 122;
@@ -1510,7 +1413,7 @@
             this.nud_explDelay.DecimalPlaces = 1;
             this.nud_explDelay.Enabled = false;
             this.nud_explDelay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_explDelay.Location = new System.Drawing.Point(126, 373);
+            this.nud_explDelay.Location = new System.Drawing.Point(127, 325);
             this.nud_explDelay.Name = "nud_explDelay";
             this.nud_explDelay.Size = new System.Drawing.Size(50, 27);
             this.nud_explDelay.TabIndex = 126;
@@ -1521,7 +1424,7 @@
             this.l_bomb3.AutoSize = true;
             this.l_bomb3.Enabled = false;
             this.l_bomb3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_bomb3.Location = new System.Drawing.Point(78, 375);
+            this.l_bomb3.Location = new System.Drawing.Point(79, 327);
             this.l_bomb3.Name = "l_bomb3";
             this.l_bomb3.Size = new System.Drawing.Size(48, 20);
             this.l_bomb3.TabIndex = 130;
@@ -1532,7 +1435,7 @@
             this.l_bomb2.AutoSize = true;
             this.l_bomb2.Enabled = false;
             this.l_bomb2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_bomb2.Location = new System.Drawing.Point(45, 345);
+            this.l_bomb2.Location = new System.Drawing.Point(46, 297);
             this.l_bomb2.Name = "l_bomb2";
             this.l_bomb2.Size = new System.Drawing.Size(82, 20);
             this.l_bomb2.TabIndex = 129;
@@ -1549,7 +1452,7 @@
             0,
             0,
             131072});
-            this.nud_arcHeight.Location = new System.Drawing.Point(126, 343);
+            this.nud_arcHeight.Location = new System.Drawing.Point(127, 295);
             this.nud_arcHeight.Name = "nud_arcHeight";
             this.nud_arcHeight.Size = new System.Drawing.Size(50, 27);
             this.nud_arcHeight.TabIndex = 125;
@@ -1560,7 +1463,7 @@
             this.l_bomb1.AutoSize = true;
             this.l_bomb1.Enabled = false;
             this.l_bomb1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l_bomb1.Location = new System.Drawing.Point(36, 315);
+            this.l_bomb1.Location = new System.Drawing.Point(37, 267);
             this.l_bomb1.Name = "l_bomb1";
             this.l_bomb1.Size = new System.Drawing.Size(91, 20);
             this.l_bomb1.TabIndex = 127;
@@ -1572,12 +1475,12 @@
             this.nud_explRadius.DecimalPlaces = 1;
             this.nud_explRadius.Enabled = false;
             this.nud_explRadius.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nud_explRadius.Location = new System.Drawing.Point(126, 313);
+            this.nud_explRadius.Location = new System.Drawing.Point(127, 265);
             this.nud_explRadius.Name = "nud_explRadius";
             this.nud_explRadius.Size = new System.Drawing.Size(50, 27);
             this.nud_explRadius.TabIndex = 123;
             this.nud_explRadius.Value = new decimal(new int[] {
-            19,
+            9,
             0,
             0,
             65536});
@@ -1588,7 +1491,7 @@
             this.chb_isIncendiary.AutoSize = true;
             this.chb_isIncendiary.Enabled = false;
             this.chb_isIncendiary.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chb_isIncendiary.Location = new System.Drawing.Point(107, 403);
+            this.chb_isIncendiary.Location = new System.Drawing.Point(108, 355);
             this.chb_isIncendiary.Name = "chb_isIncendiary";
             this.chb_isIncendiary.Size = new System.Drawing.Size(108, 24);
             this.chb_isIncendiary.TabIndex = 25;
@@ -1653,13 +1556,14 @@
             // l_ver
             // 
             this.l_ver.AutoSize = true;
-            this.l_ver.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.l_ver.ForeColor = System.Drawing.SystemColors.Control;
-            this.l_ver.Location = new System.Drawing.Point(12, 687);
+            this.l_ver.BackColor = System.Drawing.SystemColors.Control;
+            this.l_ver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.l_ver.ForeColor = System.Drawing.Color.Gray;
+            this.l_ver.Location = new System.Drawing.Point(27, 437);
             this.l_ver.Name = "l_ver";
-            this.l_ver.Size = new System.Drawing.Size(40, 15);
+            this.l_ver.Size = new System.Drawing.Size(45, 17);
             this.l_ver.TabIndex = 28;
-            this.l_ver.Text = "v 1.2.0";
+            this.l_ver.Text = "v 1.3.0";
             this.l_ver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // chb_customInteract
@@ -1717,11 +1621,11 @@
             // MainTabControl
             // 
             this.MainTabControl.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.MainTabControl.Controls.Add(this.tab5_Crafting);
-            this.MainTabControl.Controls.Add(this.tab2_TexSounds);
             this.MainTabControl.Controls.Add(this.tab1_Info);
+            this.MainTabControl.Controls.Add(this.tab2_TexSounds);
             this.MainTabControl.Controls.Add(this.tab3_Stats);
             this.MainTabControl.Controls.Add(this.tab4_Melee);
+            this.MainTabControl.Controls.Add(this.tab5_Crafting);
             this.MainTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.MainTabControl.ItemSize = new System.Drawing.Size(50, 100);
             this.MainTabControl.Location = new System.Drawing.Point(2, 4);
@@ -1732,6 +1636,119 @@
             this.MainTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabControl.TabIndex = 133;
             this.MainTabControl.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControl_DrawItem);
+            // 
+            // tab1_Info
+            // 
+            this.tab1_Info.BackColor = System.Drawing.Color.Gray;
+            this.tab1_Info.Controls.Add(this.b_AddClass);
+            this.tab1_Info.Controls.Add(this.b_AddTag);
+            this.tab1_Info.Controls.Add(this.tb_customClass);
+            this.tab1_Info.Controls.Add(this.tb_customTag);
+            this.tab1_Info.Controls.Add(this.chlb_classes);
+            this.tab1_Info.Controls.Add(this.chlb_tags);
+            this.tab1_Info.Controls.Add(this.label15);
+            this.tab1_Info.Controls.Add(this.label7);
+            this.tab1_Info.Controls.Add(this.label1);
+            this.tab1_Info.Controls.Add(this.tb_defName);
+            this.tab1_Info.Controls.Add(this.label2);
+            this.tab1_Info.Controls.Add(this.tb_label);
+            this.tab1_Info.Controls.Add(this.label3);
+            this.tab1_Info.Controls.Add(this.tb_prefix);
+            this.tab1_Info.Controls.Add(this.rtb_description);
+            this.tab1_Info.Controls.Add(this.label9);
+            this.tab1_Info.Controls.Add(this.label49);
+            this.tab1_Info.Controls.Add(this.label12);
+            this.tab1_Info.Controls.Add(this.label14);
+            this.tab1_Info.Location = new System.Drawing.Point(104, 4);
+            this.tab1_Info.Name = "tab1_Info";
+            this.tab1_Info.Padding = new System.Windows.Forms.Padding(3);
+            this.tab1_Info.Size = new System.Drawing.Size(492, 442);
+            this.tab1_Info.TabIndex = 0;
+            this.tab1_Info.Text = "Info";
+            // 
+            // b_AddClass
+            // 
+            this.b_AddClass.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.b_AddClass.Location = new System.Drawing.Point(392, 371);
+            this.b_AddClass.Name = "b_AddClass";
+            this.b_AddClass.Size = new System.Drawing.Size(45, 25);
+            this.b_AddClass.TabIndex = 119;
+            this.b_AddClass.Text = "+/-";
+            this.b_AddClass.UseVisualStyleBackColor = true;
+            this.b_AddClass.Click += new System.EventHandler(this.AddCustomTagOrClass);
+            // 
+            // b_AddTag
+            // 
+            this.b_AddTag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.b_AddTag.Location = new System.Drawing.Point(218, 371);
+            this.b_AddTag.Name = "b_AddTag";
+            this.b_AddTag.Size = new System.Drawing.Size(45, 25);
+            this.b_AddTag.TabIndex = 119;
+            this.b_AddTag.Text = "+/-";
+            this.b_AddTag.UseVisualStyleBackColor = true;
+            this.b_AddTag.Click += new System.EventHandler(this.AddCustomTagOrClass);
+            // 
+            // tb_customClass
+            // 
+            this.tb_customClass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tb_customClass.Location = new System.Drawing.Point(282, 371);
+            this.tb_customClass.Name = "tb_customClass";
+            this.tb_customClass.Size = new System.Drawing.Size(110, 25);
+            this.tb_customClass.TabIndex = 118;
+            // 
+            // tb_customTag
+            // 
+            this.tb_customTag.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tb_customTag.Location = new System.Drawing.Point(108, 371);
+            this.tb_customTag.Name = "tb_customTag";
+            this.tb_customTag.Size = new System.Drawing.Size(110, 25);
+            this.tb_customTag.TabIndex = 118;
+            // 
+            // chlb_classes
+            // 
+            this.chlb_classes.CheckOnClick = true;
+            this.chlb_classes.FormattingEnabled = true;
+            this.chlb_classes.Items.AddRange(new object[] {
+            "RangedLight",
+            "RangedHeavy",
+            "ShortShots",
+            "LongShots"});
+            this.chlb_classes.Location = new System.Drawing.Point(282, 257);
+            this.chlb_classes.Name = "chlb_classes";
+            this.chlb_classes.Size = new System.Drawing.Size(155, 112);
+            this.chlb_classes.TabIndex = 117;
+            this.chlb_classes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.TagsOrClasses_Changed);
+            // 
+            // chlb_tags
+            // 
+            this.chlb_tags.CheckOnClick = true;
+            this.chlb_tags.FormattingEnabled = true;
+            this.chlb_tags.Items.AddRange(new object[] {
+            "Gun",
+            "Revolver",
+            "SimpleGun",
+            "GunHeavy",
+            "IndustrialGunAdvanced",
+            "SniperRifle",
+            "SpacerGun",
+            "NeolithicRangedBasic",
+            "NeolithicRangedHeavy",
+            "NeolithicRangedChief"});
+            this.chlb_tags.Location = new System.Drawing.Point(108, 257);
+            this.chlb_tags.Name = "chlb_tags";
+            this.chlb_tags.Size = new System.Drawing.Size(155, 112);
+            this.chlb_tags.TabIndex = 117;
+            this.chlb_tags.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.TagsOrClasses_Changed);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(42, 372);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(60, 20);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Custom";
             // 
             // tab2_TexSounds
             // 
@@ -2041,6 +2058,195 @@
             this.l_ov6.TabIndex = 120;
             this.l_ov6.Text = "Default: 1";
             this.l_ov6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tab3_Stats
+            // 
+            this.tab3_Stats.BackColor = System.Drawing.Color.Gray;
+            this.tab3_Stats.Controls.Add(this.label4);
+            this.tab3_Stats.Controls.Add(this.nud_rangedDamage);
+            this.tab3_Stats.Controls.Add(this.label5);
+            this.tab3_Stats.Controls.Add(this.nud_explDelay);
+            this.tab3_Stats.Controls.Add(this.nud_stoppingPower);
+            this.tab3_Stats.Controls.Add(this.l_bomb3);
+            this.tab3_Stats.Controls.Add(this.label6);
+            this.tab3_Stats.Controls.Add(this.l_bomb2);
+            this.tab3_Stats.Controls.Add(this.nud_bulletSpeed);
+            this.tab3_Stats.Controls.Add(this.nud_arcHeight);
+            this.tab3_Stats.Controls.Add(this.label19);
+            this.tab3_Stats.Controls.Add(this.label35);
+            this.tab3_Stats.Controls.Add(this.l_bomb1);
+            this.tab3_Stats.Controls.Add(this.nud_accTouch);
+            this.tab3_Stats.Controls.Add(this.nud_explRadius);
+            this.tab3_Stats.Controls.Add(this.label20);
+            this.tab3_Stats.Controls.Add(this.cb_damageDef);
+            this.tab3_Stats.Controls.Add(this.label29);
+            this.tab3_Stats.Controls.Add(this.label17);
+            this.tab3_Stats.Controls.Add(this.nud_accShort);
+            this.tab3_Stats.Controls.Add(this.label27);
+            this.tab3_Stats.Controls.Add(this.label38);
+            this.tab3_Stats.Controls.Add(this.label36);
+            this.tab3_Stats.Controls.Add(this.label21);
+            this.tab3_Stats.Controls.Add(this.label33);
+            this.tab3_Stats.Controls.Add(this.label32);
+            this.tab3_Stats.Controls.Add(this.label13);
+            this.tab3_Stats.Controls.Add(this.nud_huntingStealth);
+            this.tab3_Stats.Controls.Add(this.nud_moveSpeed);
+            this.tab3_Stats.Controls.Add(this.nud_accMedium);
+            this.tab3_Stats.Controls.Add(this.nud_armorPen);
+            this.tab3_Stats.Controls.Add(this.label18);
+            this.tab3_Stats.Controls.Add(this.nud_AP);
+            this.tab3_Stats.Controls.Add(this.nud_accLong);
+            this.tab3_Stats.Controls.Add(this.label25);
+            this.tab3_Stats.Controls.Add(this.nud_range);
+            this.tab3_Stats.Controls.Add(this.label24);
+            this.tab3_Stats.Controls.Add(this.nud_mass);
+            this.tab3_Stats.Controls.Add(this.label23);
+            this.tab3_Stats.Controls.Add(this.nud_rangedCooldown);
+            this.tab3_Stats.Controls.Add(this.label22);
+            this.tab3_Stats.Controls.Add(this.nud_rangedWarmup);
+            this.tab3_Stats.Controls.Add(this.chb_isBurst);
+            this.tab3_Stats.Controls.Add(this.l_b1);
+            this.tab3_Stats.Controls.Add(this.nud_burstCount);
+            this.tab3_Stats.Controls.Add(this.l_b2);
+            this.tab3_Stats.Controls.Add(this.nud_burstDelay);
+            this.tab3_Stats.Controls.Add(this.label42);
+            this.tab3_Stats.Controls.Add(this.nud_marketValue);
+            this.tab3_Stats.Controls.Add(this.label43);
+            this.tab3_Stats.Controls.Add(this.chb_isIncendiary);
+            this.tab3_Stats.Location = new System.Drawing.Point(104, 4);
+            this.tab3_Stats.Name = "tab3_Stats";
+            this.tab3_Stats.Size = new System.Drawing.Size(492, 442);
+            this.tab3_Stats.TabIndex = 2;
+            this.tab3_Stats.Text = "Stats";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Enabled = false;
+            this.label35.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label35.Location = new System.Drawing.Point(339, 239);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(85, 20);
+            this.label35.TabIndex = 127;
+            this.label35.Text = "Stat Offsets";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label38.Location = new System.Drawing.Point(285, 297);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(116, 20);
+            this.label38.TabIndex = 40;
+            this.label38.Text = "Hunting Stealth";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label36.Location = new System.Drawing.Point(307, 267);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(94, 20);
+            this.label36.TabIndex = 40;
+            this.label36.Text = "Move Speed";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.SystemColors.Control;
+            this.label33.Location = new System.Drawing.Point(183, 271);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(112, 15);
+            this.label33.TabIndex = 119;
+            this.label33.Text = "X.9 is used in vanilla";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.SystemColors.Control;
+            this.label32.Location = new System.Drawing.Point(183, 135);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(112, 15);
+            this.label32.TabIndex = 119;
+            this.label32.Text = "X.9 is used in vanilla";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nud_huntingStealth
+            // 
+            this.nud_huntingStealth.DecimalPlaces = 2;
+            this.nud_huntingStealth.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nud_huntingStealth.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
+            this.nud_huntingStealth.Location = new System.Drawing.Point(407, 295);
+            this.nud_huntingStealth.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.nud_huntingStealth.Name = "nud_huntingStealth";
+            this.nud_huntingStealth.Size = new System.Drawing.Size(58, 27);
+            this.nud_huntingStealth.TabIndex = 20;
+            this.nud_huntingStealth.ValueChanged += new System.EventHandler(this.StatOffsets_Changed);
+            // 
+            // nud_moveSpeed
+            // 
+            this.nud_moveSpeed.DecimalPlaces = 2;
+            this.nud_moveSpeed.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nud_moveSpeed.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
+            this.nud_moveSpeed.Location = new System.Drawing.Point(407, 265);
+            this.nud_moveSpeed.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.nud_moveSpeed.Name = "nud_moveSpeed";
+            this.nud_moveSpeed.Size = new System.Drawing.Size(58, 27);
+            this.nud_moveSpeed.TabIndex = 20;
+            this.nud_moveSpeed.ValueChanged += new System.EventHandler(this.StatOffsets_Changed);
+            // 
+            // tab4_Melee
+            // 
+            this.tab4_Melee.BackColor = System.Drawing.Color.Gray;
+            this.tab4_Melee.Controls.Add(this.label26);
+            this.tab4_Melee.Controls.Add(this.chb_hasGrip);
+            this.tab4_Melee.Controls.Add(this.nud_barrelDamage);
+            this.tab4_Melee.Controls.Add(this.l_m1);
+            this.tab4_Melee.Controls.Add(this.l_m2);
+            this.tab4_Melee.Controls.Add(this.nud_barrelCooldown);
+            this.tab4_Melee.Controls.Add(this.chb_hasStock);
+            this.tab4_Melee.Controls.Add(this.nud_stockDamage);
+            this.tab4_Melee.Controls.Add(this.l_m3);
+            this.tab4_Melee.Controls.Add(this.l_m4);
+            this.tab4_Melee.Controls.Add(this.nud_stockCooldown);
+            this.tab4_Melee.Controls.Add(this.chb_hasBarrel);
+            this.tab4_Melee.Controls.Add(this.nud_gripDamage);
+            this.tab4_Melee.Controls.Add(this.l_m5);
+            this.tab4_Melee.Controls.Add(this.l_m6);
+            this.tab4_Melee.Controls.Add(this.nud_gripCooldown);
+            this.tab4_Melee.Controls.Add(this.chb_hasBlade);
+            this.tab4_Melee.Controls.Add(this.nud_bladeDamage);
+            this.tab4_Melee.Controls.Add(this.l_m7);
+            this.tab4_Melee.Controls.Add(this.l_m8);
+            this.tab4_Melee.Controls.Add(this.nud_bladeCooldown);
+            this.tab4_Melee.Controls.Add(this.chb_hasLimb);
+            this.tab4_Melee.Controls.Add(this.nud_limbDamage);
+            this.tab4_Melee.Controls.Add(this.l_m9);
+            this.tab4_Melee.Controls.Add(this.l_m10);
+            this.tab4_Melee.Controls.Add(this.nud_limbCooldown);
+            this.tab4_Melee.Location = new System.Drawing.Point(104, 4);
+            this.tab4_Melee.Name = "tab4_Melee";
+            this.tab4_Melee.Size = new System.Drawing.Size(492, 442);
+            this.tab4_Melee.TabIndex = 3;
+            this.tab4_Melee.Text = "Melee";
             // 
             // tab5_Crafting
             // 
@@ -2367,119 +2573,6 @@
             this.l_cr2.TabIndex = 115;
             this.l_cr2.Text = "Req. Research";
             // 
-            // tab1_Info
-            // 
-            this.tab1_Info.BackColor = System.Drawing.Color.Gray;
-            this.tab1_Info.Controls.Add(this.label7);
-            this.tab1_Info.Controls.Add(this.label1);
-            this.tab1_Info.Controls.Add(this.tb_defName);
-            this.tab1_Info.Controls.Add(this.label2);
-            this.tab1_Info.Controls.Add(this.tb_label);
-            this.tab1_Info.Controls.Add(this.label3);
-            this.tab1_Info.Controls.Add(this.tb_prefix);
-            this.tab1_Info.Controls.Add(this.rtb_description);
-            this.tab1_Info.Controls.Add(this.label9);
-            this.tab1_Info.Controls.Add(this.label49);
-            this.tab1_Info.Controls.Add(this.cb_tag);
-            this.tab1_Info.Controls.Add(this.label12);
-            this.tab1_Info.Controls.Add(this.label14);
-            this.tab1_Info.Controls.Add(this.cb_class);
-            this.tab1_Info.Controls.Add(this.label15);
-            this.tab1_Info.Location = new System.Drawing.Point(104, 4);
-            this.tab1_Info.Name = "tab1_Info";
-            this.tab1_Info.Padding = new System.Windows.Forms.Padding(3);
-            this.tab1_Info.Size = new System.Drawing.Size(492, 442);
-            this.tab1_Info.TabIndex = 0;
-            this.tab1_Info.Text = "Info";
-            // 
-            // tab3_Stats
-            // 
-            this.tab3_Stats.BackColor = System.Drawing.Color.Gray;
-            this.tab3_Stats.Controls.Add(this.label4);
-            this.tab3_Stats.Controls.Add(this.nud_rangedDamage);
-            this.tab3_Stats.Controls.Add(this.label5);
-            this.tab3_Stats.Controls.Add(this.nud_explDelay);
-            this.tab3_Stats.Controls.Add(this.nud_stoppingPower);
-            this.tab3_Stats.Controls.Add(this.l_bomb3);
-            this.tab3_Stats.Controls.Add(this.label6);
-            this.tab3_Stats.Controls.Add(this.l_bomb2);
-            this.tab3_Stats.Controls.Add(this.nud_bulletSpeed);
-            this.tab3_Stats.Controls.Add(this.nud_arcHeight);
-            this.tab3_Stats.Controls.Add(this.label19);
-            this.tab3_Stats.Controls.Add(this.l_bomb1);
-            this.tab3_Stats.Controls.Add(this.nud_accTouch);
-            this.tab3_Stats.Controls.Add(this.nud_explRadius);
-            this.tab3_Stats.Controls.Add(this.label20);
-            this.tab3_Stats.Controls.Add(this.cb_damageDef);
-            this.tab3_Stats.Controls.Add(this.label29);
-            this.tab3_Stats.Controls.Add(this.label17);
-            this.tab3_Stats.Controls.Add(this.nud_accShort);
-            this.tab3_Stats.Controls.Add(this.label27);
-            this.tab3_Stats.Controls.Add(this.label21);
-            this.tab3_Stats.Controls.Add(this.label13);
-            this.tab3_Stats.Controls.Add(this.nud_accMedium);
-            this.tab3_Stats.Controls.Add(this.nud_armorPen);
-            this.tab3_Stats.Controls.Add(this.label18);
-            this.tab3_Stats.Controls.Add(this.nud_AP);
-            this.tab3_Stats.Controls.Add(this.nud_accLong);
-            this.tab3_Stats.Controls.Add(this.label25);
-            this.tab3_Stats.Controls.Add(this.nud_range);
-            this.tab3_Stats.Controls.Add(this.label24);
-            this.tab3_Stats.Controls.Add(this.nud_mass);
-            this.tab3_Stats.Controls.Add(this.label23);
-            this.tab3_Stats.Controls.Add(this.nud_rangedCooldown);
-            this.tab3_Stats.Controls.Add(this.label22);
-            this.tab3_Stats.Controls.Add(this.nud_rangedWarmup);
-            this.tab3_Stats.Controls.Add(this.chb_isBurst);
-            this.tab3_Stats.Controls.Add(this.l_b1);
-            this.tab3_Stats.Controls.Add(this.nud_burstCount);
-            this.tab3_Stats.Controls.Add(this.l_b2);
-            this.tab3_Stats.Controls.Add(this.nud_burstDelay);
-            this.tab3_Stats.Controls.Add(this.label42);
-            this.tab3_Stats.Controls.Add(this.nud_marketValue);
-            this.tab3_Stats.Controls.Add(this.label43);
-            this.tab3_Stats.Controls.Add(this.chb_isIncendiary);
-            this.tab3_Stats.Location = new System.Drawing.Point(104, 4);
-            this.tab3_Stats.Name = "tab3_Stats";
-            this.tab3_Stats.Size = new System.Drawing.Size(492, 442);
-            this.tab3_Stats.TabIndex = 2;
-            this.tab3_Stats.Text = "Stats";
-            // 
-            // tab4_Melee
-            // 
-            this.tab4_Melee.BackColor = System.Drawing.Color.Gray;
-            this.tab4_Melee.Controls.Add(this.label26);
-            this.tab4_Melee.Controls.Add(this.chb_hasGrip);
-            this.tab4_Melee.Controls.Add(this.nud_barrelDamage);
-            this.tab4_Melee.Controls.Add(this.l_m1);
-            this.tab4_Melee.Controls.Add(this.l_m2);
-            this.tab4_Melee.Controls.Add(this.nud_barrelCooldown);
-            this.tab4_Melee.Controls.Add(this.chb_hasStock);
-            this.tab4_Melee.Controls.Add(this.nud_stockDamage);
-            this.tab4_Melee.Controls.Add(this.l_m3);
-            this.tab4_Melee.Controls.Add(this.l_m4);
-            this.tab4_Melee.Controls.Add(this.nud_stockCooldown);
-            this.tab4_Melee.Controls.Add(this.chb_hasBarrel);
-            this.tab4_Melee.Controls.Add(this.nud_gripDamage);
-            this.tab4_Melee.Controls.Add(this.l_m5);
-            this.tab4_Melee.Controls.Add(this.l_m6);
-            this.tab4_Melee.Controls.Add(this.nud_gripCooldown);
-            this.tab4_Melee.Controls.Add(this.chb_hasBlade);
-            this.tab4_Melee.Controls.Add(this.nud_bladeDamage);
-            this.tab4_Melee.Controls.Add(this.l_m7);
-            this.tab4_Melee.Controls.Add(this.l_m8);
-            this.tab4_Melee.Controls.Add(this.nud_bladeCooldown);
-            this.tab4_Melee.Controls.Add(this.chb_hasLimb);
-            this.tab4_Melee.Controls.Add(this.nud_limbDamage);
-            this.tab4_Melee.Controls.Add(this.l_m9);
-            this.tab4_Melee.Controls.Add(this.l_m10);
-            this.tab4_Melee.Controls.Add(this.nud_limbCooldown);
-            this.tab4_Melee.Location = new System.Drawing.Point(104, 4);
-            this.tab4_Melee.Name = "tab4_Melee";
-            this.tab4_Melee.Size = new System.Drawing.Size(492, 442);
-            this.tab4_Melee.TabIndex = 3;
-            this.tab4_Melee.Text = "Melee";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -2525,11 +2618,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_arcHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_explRadius)).EndInit();
             this.MainTabControl.ResumeLayout(false);
+            this.tab1_Info.ResumeLayout(false);
+            this.tab1_Info.PerformLayout();
             this.tab2_TexSounds.ResumeLayout(false);
             this.tab2_TexSounds.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_drawSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_uiIconScale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_angleOffset)).EndInit();
+            this.tab3_Stats.ResumeLayout(false);
+            this.tab3_Stats.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_huntingStealth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_moveSpeed)).EndInit();
+            this.tab4_Melee.ResumeLayout(false);
+            this.tab4_Melee.PerformLayout();
             this.tab5_Crafting.ResumeLayout(false);
             this.tab5_Crafting.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_workToMake)).EndInit();
@@ -2546,12 +2647,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_comp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_steel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_reqSkill)).EndInit();
-            this.tab1_Info.ResumeLayout(false);
-            this.tab1_Info.PerformLayout();
-            this.tab3_Stats.ResumeLayout(false);
-            this.tab3_Stats.PerformLayout();
-            this.tab4_Melee.ResumeLayout(false);
-            this.tab4_Melee.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2578,11 +2673,8 @@
         private Label label10;
         private ComboBox cb_interactSound;
         private Label label11;
-        private ComboBox cb_tag;
         private Label label12;
         private Label label14;
-        private ComboBox cb_class;
-        private Label label15;
         private ComboBox cb_shotSound;
         private Label label16;
         private NumericUpDown nud_accTouch;
@@ -2715,5 +2807,19 @@
         private MaskedTextBox tb_ovS;
         private MaskedTextBox tb_ovE;
         private MaskedTextBox tb_ovN;
+        private Label label33;
+        private Label label32;
+        private CheckedListBox chlb_tags;
+        private TextBox tb_customClass;
+        private TextBox tb_customTag;
+        private CheckedListBox chlb_classes;
+        private Label label15;
+        private Button b_AddClass;
+        private Button b_AddTag;
+        private Label label35;
+        private Label label38;
+        private Label label36;
+        private NumericUpDown nud_huntingStealth;
+        private NumericUpDown nud_moveSpeed;
     }
 }

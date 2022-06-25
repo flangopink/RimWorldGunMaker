@@ -241,31 +241,6 @@ namespace RimworldGunMaker
             UpdateString();
         }
 
-        private void TagOrClass_Changed(object sender, EventArgs e)
-        {
-            string controlName = (sender as Control).Name;
-
-            string tag = controlName switch // thank you intellisense, very cool!
-            {
-                "cb_tag" => "weaponTags",
-                "cb_class" => "weaponClasses",
-                _ => "", // required because of CS0165
-            };
-
-            if (gunPath.Element(tag) == null)
-                gunPath.Add(new XElement(tag, new XElement("li")));
-
-            var parentElem = gunPath.Element(tag);
-
-            var elem = parentElem.Element("li");
-            var value = (sender as ComboBox).SelectedItem.ToString();
-
-            if (string.IsNullOrEmpty(value) || value == "None") parentElem.Remove();
-            else elem.Value = value;
-
-            UpdateString();
-        }
-
         private void InteractSound_Changed(object sender, EventArgs e)
         {
             var tag = "soundInteract";
@@ -1000,6 +975,111 @@ namespace RimworldGunMaker
                                 new XElement("li",
                                     new XElement("compClass", "CompOversizedWeapon.CompOversizedWeapon"))));
             else gunPath.Element("comps").Remove();
+            UpdateString();
+        }
+
+        private void TagsOrClasses_Changed(object sender, ItemCheckEventArgs e)
+        {
+            var chlb = (CheckedListBox)sender;
+            string item = chlb.Items[e.Index].ToString();
+
+            string tag = chlb.Name switch
+            {
+                "chlb_tags" => "weaponTags",
+                "chlb_classes" => "weaponClasses",
+                _ => "",
+            };
+            if (gunPath.Element(tag) == null)
+                gunPath.Add(new XElement(tag));
+
+            var elem = gunPath.Element(tag);
+
+            if (e.NewValue == CheckState.Checked)
+                elem.Add(new XElement("li", item));
+            else elem.Descendants("li").Where(x => x.Value == item).Remove();
+
+            if (!elem.HasElements) elem.Remove();
+
+            UpdateString();
+        }
+
+        private void AddCustomTagOrClass(object sender, EventArgs e)
+        {
+            var b = (Button)sender;
+            string tag;
+            string text;
+
+            switch (b.Name)
+            {
+                case "b_AddTag":
+                    tag = "weaponTags";
+                    text = tb_customTag.Text;
+                    break;
+                case "b_AddClass":
+                    tag = "weaponClasses";
+                    text = tb_customClass.Text;
+                    break;
+                default:
+                    tag = "";
+                    text = "";
+                    break;
+            }
+            if (string.IsNullOrEmpty(text)) return;
+
+            if (gunPath.Element(tag) == null) gunPath.Add(new XElement(tag));
+
+            var parentElem = gunPath.Element(tag);
+            var elem = parentElem.Element("li");
+
+            var elemExists = parentElem.Descendants("li").Where(x => x.Value == text);
+            if (elemExists.Any()) elemExists.Remove();
+
+            else parentElem.Add(new XElement("li", text));
+            if (!parentElem.HasElements) parentElem.Remove();
+
+            UpdateString();
+        }
+
+        void CheckStatOffsets()
+        {
+            var elem = gunPath.Element("equippedStatOffsets");
+
+            if (elem == null)
+            {
+                gunPath.Add(new XElement("equippedStatOffsets"));
+                return;
+            }
+
+            if (!elem.HasElements) elem.Remove();
+        }
+
+        private void StatOffsets_Changed(object sender, EventArgs e)
+        {
+            CheckStatOffsets();
+
+            var parentElem = gunPath.Element("equippedStatOffsets");
+            var controlName = (sender as NumericUpDown).Name;
+            var value = (sender as NumericUpDown).Value;
+
+            string tag = controlName switch
+            {
+                "nud_moveSpeed" => "MoveSpeed",
+                "nud_huntingStealth" => "HuntingStealth",
+                _ => "",
+            };
+
+            var elem = parentElem.Element(tag);
+
+            if (value == 0)
+            {
+                elem?.Remove();
+                CheckStatOffsets();
+            }
+            else
+            {
+                if (elem != null) elem.Value = value.ToString();
+                else parentElem.Add(new XElement(tag, value));
+            }
             UpdateString();
         }
 
