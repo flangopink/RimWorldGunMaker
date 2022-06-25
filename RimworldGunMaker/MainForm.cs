@@ -517,7 +517,7 @@ namespace RimworldGunMaker
 
         private void IsCraftable_Changed(object sender, EventArgs e)
         {
-            List<Control> controls = new() { l_cr1, l_cr2, l_cr3, l_cr4, l_cr5, l_cr6, l_cr7, cb_techLevel, cb_reqResearch, cb_workbench, nud_reqSkill, nud_steel, nud_plasteel, nud_comp, nud_advcomp, nud_wood, nud_chemfuel, nud_workToMake};
+            List<Control> controls = new() { l_cr1, l_cr2, l_cr3, l_cr4, l_cr5, l_cr6, cb_techLevel, cb_reqResearch, cb_workbench, nud_reqSkill, nud_steel, nud_plasteel, nud_comp, nud_advcomp, nud_wood, nud_chemfuel, nud_workToMake};
 
             foreach (Control c in controls)
                 c.Enabled = (sender as CheckBox).Checked;
