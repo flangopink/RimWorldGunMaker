@@ -16,7 +16,7 @@ Is a tool for creating weapons for RimWorld.
 - Done!
 
 ## Known issues:
-- Values don't update when manually entering them.
+- Values don't update when manually entering them. Only when pressing Enter or changing focus.
 
 ## To-do:
 - Test, ***a lot***
