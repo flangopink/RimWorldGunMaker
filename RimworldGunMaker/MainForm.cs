@@ -44,6 +44,39 @@ namespace RimworldGunMaker
             UpdateString();
         }
 
+        private void TabControl_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Brush _textBrush;
+
+            // Get the item from the collection.
+            TabPage _tabPage = MainTabControl.TabPages[e.Index];
+
+            // Get the real bounds for the tab rectangle.
+            Rectangle _tabBounds = MainTabControl.GetTabRect(e.Index);
+
+            if (e.State == DrawItemState.Selected)
+            {
+                // Draw a different background color, and don't paint a focus rectangle.
+                _textBrush = new SolidBrush(Color.White);
+                g.FillRectangle(Brushes.DimGray, e.Bounds);
+            }
+            else
+            {
+                _textBrush = new SolidBrush(e.ForeColor);
+                e.DrawBackground();
+            }
+
+            // Use our own font.
+            Font _tabFont = new("SegoeUI", 11f, FontStyle.Bold, GraphicsUnit.Pixel);
+
+            // Draw string. Center the text.
+            StringFormat _stringFlags = new();
+            _stringFlags.Alignment = StringAlignment.Center;
+            _stringFlags.LineAlignment = StringAlignment.Center;
+            g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
+        }
+
         void UpdateString()
         {
             if (!chb_showDefs.Checked) 
@@ -188,7 +221,12 @@ namespace RimworldGunMaker
             var parentElem = bulletPath.Element("graphicData");
 
             var elem = parentElem.Element("texPath");
-            var value = "Things/Projectile/" + (sender as ComboBox).SelectedItem.ToString();
+            var value = sender.GetType().Name switch
+            {
+                "ComboBox" => "Things/Projectile/" + (sender as ComboBox).SelectedItem.ToString(),
+                "TextBox" => (sender as ComboBox).Text,
+                _ => ""
+            };
 
             if (string.IsNullOrEmpty(value))
             {
@@ -232,7 +270,12 @@ namespace RimworldGunMaker
         {
             var tag = "soundInteract";
             var elem = gunPath.Element(tag);
-            var value = (sender as ComboBox).SelectedItem.ToString();
+            var value = sender.GetType().Name switch
+            {
+                "ComboBox" => (sender as ComboBox).SelectedItem.ToString(),
+                "TextBox" => (sender as TextBox).Text,
+                _ => ""
+            };
 
             if (string.IsNullOrEmpty(value))
             {
@@ -256,7 +299,7 @@ namespace RimworldGunMaker
                 return;
             }
 
-            if (!elem.Nodes().Any()) elem.Remove();
+            if (!elem.HasElements) elem.Remove();
         }
 
         private void StatBasesItem_Changed(object sender, EventArgs e)
@@ -305,7 +348,7 @@ namespace RimworldGunMaker
                 return;
             }
 
-            if (!elem.Nodes().Any()) elem.Remove();
+            if (!elem.HasElements) elem.Remove();
         }
 
         private void CostListItem_Changed(object sender, EventArgs e)
@@ -394,7 +437,7 @@ namespace RimworldGunMaker
                 return;
             }
 
-            if (!elem.Nodes().Any()) elem.Remove();
+            if (!elem.HasElements) elem.Remove();
         }
 
         private void RecipeMakerItem_Changed(object sender, EventArgs e)
@@ -491,11 +534,14 @@ namespace RimworldGunMaker
             var wtm = ElementAtPath(def.Root, $"ThingDef[@ParentName='BaseHumanMakeableGun']/statBases/WorkToMake");
 
             // Copy
-            var gunPath2 = new XElement(ElementAtPath(defCopy.Root, $"ThingDef[@ParentName='BaseHumanMakeableGun']"));
-            if (gunPath2.Element("costList") != null) cl2 = new XElement(gunPath2.Element("costList"));
-            if (gunPath2.Element("recipeMaker") != null) rm2 = new XElement(gunPath2.Element("recipeMaker"));
-            if (gunPath2.Element("techLevel") != null) tl2 = new XElement(gunPath2.Element("techLevel"));
-            if (ElementAtPath(defCopy.Root, $"ThingDef[@ParentName='BaseHumanMakeableGun']/statBases/WorkToMake") != null) wtm2 = new XElement(ElementAtPath(defCopy.Root, $"ThingDef[@ParentName='{baseWeapon}']/statBases/WorkToMake"));
+            if ((sender as CheckBox).Checked)
+            {
+                var gunPath2 = new XElement(ElementAtPath(defCopy.Root, $"ThingDef[@ParentName='BaseHumanMakeableGun']"));
+                if (gunPath2.Element("costList") != null) cl2 = new XElement(gunPath2.Element("costList"));
+                if (gunPath2.Element("recipeMaker") != null) rm2 = new XElement(gunPath2.Element("recipeMaker"));
+                if (gunPath2.Element("techLevel") != null) tl2 = new XElement(gunPath2.Element("techLevel"));
+                if (ElementAtPath(defCopy.Root, $"ThingDef[@ParentName='BaseHumanMakeableGun']/statBases/WorkToMake") != null) wtm2 = new XElement(ElementAtPath(defCopy.Root, $"ThingDef[@ParentName='BaseHumanMakeableGun']/statBases/WorkToMake"));
+            }
 
             if (!(sender as CheckBox).Checked)
             {
@@ -521,7 +567,7 @@ namespace RimworldGunMaker
                 gunPath.Add(new XElement("tools"));
                 return;
             }
-            if (!elem.Nodes().Any()) elem.Remove();
+            if (!elem.HasElements) elem.Remove();
         }
 
         void HideShowPart(object sender, string partName)
@@ -766,7 +812,7 @@ namespace RimworldGunMaker
             if (string.IsNullOrEmpty(defaultProj.Value))
                 defaultProj.Value = defName == null ? "" : defName.Value;
 
-            if (!elem.Nodes().Any()) elem.Remove();
+            if (!elem.HasElements) elem.Remove();
         }
 
         private void VerbsItem_KeyPress(object sender, KeyPressEventArgs e)
@@ -780,15 +826,17 @@ namespace RimworldGunMaker
 
             var parentElem = gunPath.Element("verbs").Element("li");
             string controlName = ((Control)sender).Name;
-            var value = sender is NumericUpDown nud ? nud.Value.ToString() : ((ComboBox)sender).SelectedItem.ToString();
-            
+            string value;
+            if (controlName != "tb_customShotSound") value = sender is NumericUpDown nud ? nud.Value.ToString() : ((ComboBox)sender).SelectedItem.ToString();
+            else value = (sender as TextBox).Text;
+
             string tag = controlName switch
             {
                 "nud_rangedWarmup" => "warmupTime",
                 "nud_range" => "range",
                 "nud_burstCount" => "burstShotCount",
                 "nud_burstDelay" => "ticksBetweenBurstShots",
-                "cb_shotSound" => "soundCast",
+                "cb_shotSound" or "tb_customShotSound" => "soundCast",
                 "cb_shotTailSound" => "soundCastTail",
                 "nud_muzzleflashScale" => "muzzleFlashScale",
                 _ => "",
@@ -819,7 +867,7 @@ namespace RimworldGunMaker
                 return;
             }
 
-            if (!elem.Nodes().Any()) elem.Remove();
+            if (!elem.HasElements) elem.Remove();
         }
 
         private void ProjectileItem_Changed(object sender, EventArgs e)
@@ -830,7 +878,8 @@ namespace RimworldGunMaker
             string tag;
 
             string controlName = ((Control)sender).Name;
-            var value = sender is NumericUpDown nud ? nud.Value.ToString() : ((ComboBox)sender).SelectedItem.ToString();
+
+            var value = sender is NumericUpDown nud2 ? nud2.Value.ToString() : ((ComboBox)sender).SelectedItem.ToString();
 
             switch (controlName) // im surprised this works
             {
@@ -904,6 +953,88 @@ namespace RimworldGunMaker
             if (chb_showComment.Checked)
                 def.Root.AddFirst(new XComment(comment));
             else def.Root.DescendantNodes().OfType<XComment>().First().Remove();
+            UpdateString();
+        }
+
+        private void TexValues_Changed(object sender, EventArgs e)
+        {
+            var controlName = (sender as NumericUpDown).Name;
+            var value = (sender as NumericUpDown).Value;
+
+            string tag = controlName switch
+            {
+                "nud_angleOffset" => "equippedAngleOffset",
+                "nud_uiIconScale" => "uiIconScale",
+                _ => "",
+            };
+
+            var elem = gunPath.Element(tag);
+
+            if ((tag == "equippedAngleOffset" && value == 0) || (tag == "uiIconScale" && value == 1))
+                elem?.Remove();
+            else
+            {
+                if (elem != null) elem.Value = value.ToString();
+                else gunPath.Add(new XElement(tag, value));
+            }
+            UpdateString();
+        }
+
+        private void CustomStuff_Changed(object sender, EventArgs e)
+        {
+            cb_interactSound.Enabled = cb_interactSound.Visible = !chb_customInteract.Checked;
+            tb_customInteractSound.Enabled = tb_customInteractSound.Visible = chb_customInteract.Checked;
+            cb_shotSound.Enabled = cb_shotSound.Visible = !chb_customShotSound.Checked;
+            tb_customShotSound.Enabled = tb_customShotSound.Visible = chb_customShotSound.Checked;
+            cb_bulletTex.Enabled = cb_bulletTex.Visible = !chb_customBulletTex.Checked;
+            tb_customBulletTex.Enabled = tb_customBulletTex.Visible = chb_customBulletTex.Checked;
+        }
+
+        private void IsOversized_Checked(object sender, EventArgs e)
+        {
+            l_ov1.Enabled = l_ov2.Enabled = l_ov3.Enabled = l_ov4.Enabled = l_ov5.Enabled = l_ov6.Enabled
+            = nud_drawSize.Enabled = tb_ovE.Enabled = tb_ovN.Enabled = tb_ovS.Enabled = tb_ovW.Enabled = chb_isOversized.Checked;
+
+            if (gunPath.Element("comps") == null)
+                gunPath.Add(new XElement("comps",
+                                new XElement("li",
+                                    new XElement("compClass", "CompOversizedWeapon.CompOversizedWeapon"))));
+            else gunPath.Element("comps").Remove();
+            UpdateString();
+        }
+
+        private void OversizedValues_Changed(object sender, EventArgs e)
+        {
+            if (gunPath.Element("graphicData") == null)
+                gunPath.Add(new XElement("graphicData"));
+
+            var parentElem = gunPath.Element("graphicData");
+
+            var controlName = ((Control)sender).Name;
+            string value = sender is NumericUpDown nud ? nud.Value.ToString() : (sender as MaskedTextBox).Text;
+            string tag = controlName switch
+            {
+                "nud_drawSize" => "drawSize",
+                "tb_ovN" => "drawOffsetNorth",
+                "tb_ovE" => "drawOffsetEast",
+                "tb_ovS" => "drawOffsetSouth",
+                "tb_ovW" => "drawOffsetWest",
+                _ => "",
+            };
+            var elem = parentElem.Element(tag);
+
+            if ((decimal.TryParse(value, out decimal i) && i == 1) || string.IsNullOrEmpty(value) || value == "0.0, 0.0, 0.0" || value == " . ,  . ,  .")
+            {
+                elem?.Remove();
+            }
+            else
+            {
+                if (elem != null) elem.Value = value.ToString();
+                else parentElem.Add(new XElement(tag, value));
+            }
+
+            if (!parentElem.HasElements) parentElem.Remove();
+
             UpdateString();
         }
     }
