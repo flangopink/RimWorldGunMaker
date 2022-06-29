@@ -17,6 +17,7 @@ Is a tool for creating weapons for RimWorld.
 
 ## Known issues:
 - Values don't update when manually entering them. Only when pressing Enter or changing focus.
+- `CompClass` for oversized weapons should be removed.
 
 ## To-do:
 - Test, ***a lot***
